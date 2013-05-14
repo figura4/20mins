@@ -22,9 +22,9 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'pwdfuffa',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			'ipFilters'=>array($_SERVER['REMOTE_ADDR'],'127.0.0.1','::1'),
 		),
 	),
 
@@ -50,7 +50,7 @@ return array(
 		*/
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;unix_socket=/var/run/mysqld/mysqld.sock;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;unix_socket=/var/run/mysqld/mysqld.sock;dbname=20mins',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'pwdfuffa',
