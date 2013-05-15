@@ -16,6 +16,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'username'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'hashed_password'); ?>
 		<?php echo $form->textField($model,'hashed_password',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'hashed_password'); ?>

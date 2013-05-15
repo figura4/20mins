@@ -41,14 +41,14 @@ class Author extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, bio_url, picture, created_on, updated_on', 'required'),
+			array('first_name, last_name, created_on, updated_on', 'required'),
 			array('first_name, last_name', 'length', 'max'=>50),
 			array('bio_url', 'length', 'max'=>200),
 			array('picture', 'length', 'max'=>100),
 			array('bio', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, first_name, last_name, bio, bio_url, picture, created_on, updated_on', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, bio, created_on, updated_on', 'safe', 'on'=>'search'),
 		);
 	}
 

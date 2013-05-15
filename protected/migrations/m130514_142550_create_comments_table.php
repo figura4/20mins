@@ -4,7 +4,7 @@ class m130514_142550_create_comments_table extends CDbMigration
 {
 	public function safeUp()
 	{
-		$this->createTable('tbl_comment', array(
+		$this->createTable('{{comment}}', array(
 				'id' 			=> 'pk',
 				'body'			=> 'text NOT NULL',
 				'author'		=> 'VARCHAR(50) NOT NULL',
@@ -17,6 +17,6 @@ class m130514_142550_create_comments_table extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropTable('tbl_comment');
+		$this->dropTable('{{comment}}');
 	}
 }

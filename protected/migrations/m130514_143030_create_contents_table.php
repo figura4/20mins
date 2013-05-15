@@ -4,7 +4,7 @@ class m130514_143030_create_contents_table extends CDbMigration
 {
 	public function safeUp()
 	{
-		$this->createTable('tbl_content', array(
+		$this->createTable('{{content}}', array(
 				'id' 				=> 'pk',
 				'page_title'		=> 'VARCHAR(200) NOT NULL',
 				'user_id'			=> 'int',
@@ -36,6 +36,6 @@ class m130514_143030_create_contents_table extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropTable('tbl_content');
+		$this->dropTable('{{content}}');
 	}
 }

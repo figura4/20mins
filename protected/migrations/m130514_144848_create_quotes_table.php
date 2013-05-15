@@ -4,7 +4,7 @@ class m130514_144848_create_quotes_table extends CDbMigration
 {
 	public function safeUp()
 	{
-		$this->createTable('tbl_quote', array(
+		$this->createTable('{{quote}}', array(
 				'id' 				=> 'pk',
 				'body'				=> 'text NOT NULL',
 				'source'			=> 'VARCHAR(200)',
@@ -17,6 +17,6 @@ class m130514_144848_create_quotes_table extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropTable('tbl_quote');
+		$this->dropTable('{{quote}}');
 	}
 }

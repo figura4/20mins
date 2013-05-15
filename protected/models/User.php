@@ -42,7 +42,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('hashed_password, salt, email, homepage, avatar, role, created_on, updated_on', 'required'),
+			array('username, hashed_password, salt, email, role, created_on, updated_on', 'required'),
 			array('hashed_password, salt, email, homepage', 'length', 'max'=>200),
 			array('avatar, role', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -70,6 +70,7 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'username' => 'User Name',
 			'hashed_password' => 'Hashed Password',
 			'salt' => 'Salt',
 			'email' => 'Email',

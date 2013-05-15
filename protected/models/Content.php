@@ -59,7 +59,7 @@ class Content extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('page_title, user_id, published, type, body, author_id, pub_date, created_on, updated_on', 'required'),
+			array('page_title, user_id, published, type, body, pub_date, created_on, updated_on', 'required'),
 			array('user_id, published, vote, author_id', 'numerical', 'integerOnly'=>true),
 			array('page_title, italian_title, italian_subtitle, original_title, original_subtitle, seasons', 'length', 'max'=>200),
 			array('type, editor', 'length', 'max'=>50),

@@ -4,7 +4,7 @@ class m130514_140737_create_tags_table extends CDbMigration
 {
 	public function safeUp()
 	{
-		$this->createTable('tbl_tag', array(
+		$this->createTable('{{tag}}', array(
 				'id' 			=> 'pk',
 				'name' 			=> 'VARCHAR(50) NOT NULL',
 				'description'	=> 'text NOT NULL',
@@ -16,6 +16,6 @@ class m130514_140737_create_tags_table extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropTable('tbl_tag');
+		$this->dropTable('{{tag}}');
 	}
 }
