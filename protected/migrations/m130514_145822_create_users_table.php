@@ -6,6 +6,7 @@ class m130514_145822_create_users_table extends CDbMigration
 	{
 		$this->createTable('tbl_user', array(
 				'id' 				=> 'pk',
+				'username'		    => 'VARCHAR(20) NOT NULL',
 				'hashed_password'	=> 'VARCHAR(200) NOT NULL',
 				'salt'				=> 'VARCHAR(200) NOT NULL',
 				'email'				=> 'VARCHAR(200) NOT NULL',
