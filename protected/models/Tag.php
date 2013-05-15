@@ -28,7 +28,7 @@ class Tag extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_tag';
+		return '{{tag}}';
 	}
 
 	/**

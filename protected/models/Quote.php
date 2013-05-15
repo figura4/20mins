@@ -29,7 +29,7 @@ class Quote extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_quote';
+		return '{{quote}}';
 	}
 
 	/**

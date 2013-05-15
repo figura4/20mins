@@ -30,7 +30,7 @@ class Author extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_author';
+		return '{{author}}';
 	}
 
 	/**

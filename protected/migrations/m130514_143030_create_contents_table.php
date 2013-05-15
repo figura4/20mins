@@ -7,7 +7,7 @@ class m130514_143030_create_contents_table extends CDbMigration
 		$this->createTable('tbl_content', array(
 				'id' 				=> 'pk',
 				'page_title'		=> 'VARCHAR(200) NOT NULL',
-				'user_id'			=> 'int NOT NULL',
+				'user_id'			=> 'int',
 				'published'			=> 'bool NOT NULL',
 				'type'				=> 'VARCHAR(50) NOT NULL',
 				'body'				=> 'text NOT NULL',
@@ -21,7 +21,7 @@ class m130514_143030_create_contents_table extends CDbMigration
 				'original_subtitle'	=> 'VARCHAR(200)',
 				'year'				=> 'VARCHAR(4)',
 				'vote'				=> 'smallint',
-				'author_id'			=> 'int NOT NULL',
+				'author_id'			=> 'int',
 				'actors'			=> 'text',
 				'nation'			=> 'VARCHAR(30)',
 				'pages'				=> 'VARCHAR(5)',

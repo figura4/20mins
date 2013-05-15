@@ -16,6 +16,7 @@ return array(
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'pwdfuffa',
+			'tablePrefix' => 'tbl_',
 			'charset' => 'utf8',
 		),
 		'log'=>array(

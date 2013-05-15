@@ -26,7 +26,7 @@ class TagContent extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_tag_content';
+		return '{{tag_content}}';
 	}
 
 	/**

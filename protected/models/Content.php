@@ -48,7 +48,7 @@ class Content extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_content';
+		return '{{content}}';
 	}
 
 	/**
