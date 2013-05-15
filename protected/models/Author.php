@@ -60,6 +60,7 @@ class Author extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+				'reviews'=>array(self::HAS_MANY, 'Content', 'author_id'),
 		);
 	}
 
