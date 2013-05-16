@@ -45,12 +45,14 @@
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 
+	<!--
 	<div class="row">
 		<?php echo $form->labelEx($model,'cover'); ?>
 		<?php echo $form->textField($model,'cover',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'cover'); ?>
 	</div>
-
+	-->
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'picture1'); ?>
 		<?php echo $form->textField($model,'picture1',array('size'=>60,'maxlength'=>100)); ?>
@@ -69,6 +71,7 @@
 		<?php echo $form->error($model,'picture3'); ?>
 	</div>
 
+	<!-- 
 	<div class="row">
 		<?php echo $form->labelEx($model,'italian_title'); ?>
 		<?php echo $form->textField($model,'italian_title',array('size'=>60,'maxlength'=>200)); ?>
@@ -146,7 +149,8 @@
 		<?php echo $form->textField($model,'seasons',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'seasons'); ?>
 	</div>
-
+	-->
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'pub_date'); ?>
 		<?php echo $form->textField($model,'pub_date'); ?>
