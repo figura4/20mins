@@ -134,4 +134,10 @@ class Content extends CActiveRecord
 		$model=new $class(null);
 		return $model;
 	}
+	
+	function defaultScope(){
+		return array(
+				'condition'=>"type='content'",
+		);
+	}
 }

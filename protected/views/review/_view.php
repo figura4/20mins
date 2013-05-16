@@ -1,6 +1,6 @@
 <?php
-/* @var $this ContentController */
-/* @var $data Content */
+/* @var $this ReviewController */
+/* @var $data Review */
 ?>
 
 <div class="view">
@@ -95,7 +95,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('seasons')); ?>:</b>
-	<?php echo CHtml::encode($data->seasons); */?>
+	<?php echo CHtml::encode($data->seasons); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('pub_date')); ?>:</b>
@@ -110,6 +110,6 @@
 	<?php echo CHtml::encode($data->updated_on); ?>
 	<br />
 
-	 ?>
+	*/ ?>
 
 </div>
