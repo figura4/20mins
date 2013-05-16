@@ -9,12 +9,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('page_title')); ?>:</b>
-	<?php echo CHtml::encode($data->page_title); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
-	<?php echo CHtml::encode($data->user_id); ?>
+	<?php echo CHtml::encode(User::model()->findByPk($data->user_id)->username); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('published')); ?>:</b>
@@ -25,15 +21,10 @@
 	<?php echo CHtml::encode($data->type); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('body')); ?>:</b>
-	<?php echo CHtml::encode($data->body); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('cover')); ?>:</b>
 	<?php echo CHtml::encode($data->cover); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('picture1')); ?>:</b>
 	<?php echo CHtml::encode($data->picture1); ?>
 	<br />
@@ -71,7 +62,10 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('author_id')); ?>:</b>
-	<?php echo CHtml::encode($data->author_id); ?>
+	<?php echo CHtml::encode(
+					Author::model()->findByPk($data->author_id)->last_name . ', ' .
+					Author::model()->findByPk($data->author_id)->first_name
+			); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('actors')); ?>:</b>
@@ -109,7 +103,5 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_on')); ?>:</b>
 	<?php echo CHtml::encode($data->updated_on); ?>
 	<br />
-
-	*/ ?>
 
 </div>

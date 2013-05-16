@@ -18,7 +18,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('content_id')); ?>:</b>
-	<?php echo CHtml::encode($data->content_id); ?>
+	<?php echo CHtml::encode(Content::model()->findByPk($data->content_id)->page_title); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('random')); ?>:</b>

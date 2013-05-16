@@ -9,10 +9,6 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('body')); ?>:</b>
-	<?php echo CHtml::encode($data->body); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('author')); ?>:</b>
 	<?php echo CHtml::encode($data->author); ?>
 	<br />
@@ -22,7 +18,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('content_id')); ?>:</b>
-	<?php echo CHtml::encode($data->content_id); ?>
+	<?php echo CHtml::encode(Content::model()->findByPk($data->content_id)->original_title); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_on')); ?>:</b>
@@ -33,5 +29,8 @@
 	<?php echo CHtml::encode($data->updated_on); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('body')); ?>:</b>
+	<?php echo CHtml::encode($data->body); ?>
+	<br />
 
 </div>
