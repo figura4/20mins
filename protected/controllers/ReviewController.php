@@ -65,7 +65,7 @@ class ReviewController extends Controller
 		$model=new Review;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Review']))
 		{
@@ -89,7 +89,7 @@ class ReviewController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Review']))
 		{
