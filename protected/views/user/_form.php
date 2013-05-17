@@ -20,18 +20,6 @@
 		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($model,'hashed_password'); ?>
-		<?php echo $form->textField($model,'hashed_password',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'hashed_password'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'salt'); ?>
-		<?php echo $form->textField($model,'salt',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'salt'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
@@ -55,18 +43,6 @@
 		<?php echo $form->labelEx($model,'role'); ?>
 		<?php echo $form->textField($model,'role',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'role'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_on'); ?>
-		<?php echo $form->textField($model,'created_on'); ?>
-		<?php echo $form->error($model,'created_on'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_on'); ?>
-		<?php echo $form->textField($model,'updated_on'); ?>
-		<?php echo $form->error($model,'updated_on'); ?>
 	</div>
 
 	<div class="row buttons">
