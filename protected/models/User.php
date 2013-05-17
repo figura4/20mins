@@ -16,6 +16,8 @@
  */
 class User extends CActiveRecord
 {
+	public $password;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -42,7 +44,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, hashed_password, salt, email, role, created_on, updated_on', 'required'),
+			array('username, password, role', 'required'),
 			array('hashed_password, salt, email, homepage', 'length', 'max'=>200),
 			array('avatar, role', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -73,6 +75,7 @@ class User extends CActiveRecord
 			'username' => 'User Name',
 			'hashed_password' => 'Hashed Password',
 			'salt' => 'Salt',
+			'password' => 'Password',
 			'email' => 'Email',
 			'homepage' => 'Homepage',
 			'avatar' => 'Avatar',
@@ -106,5 +109,28 @@ class User extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function beforeSave(){
+		if(parent::beforeSave()) {
+			$this->salt = $this->createSalt();
+			$this->hashed_password = crypt($this->password, $this->salt);
+			
+			if ($this->isNewRecord)
+				$this->created_on = new CDbExpression('NOW()');
+			else
+				$this->updated_on = new CDbExpression('NOW()');
+			
+			return true;
+		}
+		return false;
+	}
+	
+	private function createSalt() {
+		$salt = '';
+		for ($i = 0; $i < 50; $i++) {
+			$salt .= chr(rand(33, 126));
+		}
+		return $salt;
 	}
 }

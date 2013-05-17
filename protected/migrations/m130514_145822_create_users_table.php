@@ -21,8 +21,8 @@ class m130514_145822_create_users_table extends CDbMigration
 					  array(
 					  	'id' 				=> 1,
 					  	'username' 			=> 'figura4',
-					  	'hashed_password' 	=> 'da93b36067b42a697a8183adcccc593af980498d',
-					  	'salt' 				=> '950cc1a15e8bb6fcfad3914bf0122e19',
+					  	'hashed_password' 	=> 'a7WNIGmgCQXkU',
+					  	'salt' 				=> 'a7_)OWiw%n%sP,c`h1l(J6;PvO!{A>x$UY,%1t{6d!*5,ltt}b',
 					  	'role' 				=> 'admin',
 		));
 	}

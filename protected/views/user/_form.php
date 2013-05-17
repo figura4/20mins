@@ -20,6 +20,24 @@
 		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'role'); ?>
+		<?php echo $form->dropDownList($model,'role', array('user' => 'User', 'admin' => 'Administrator'), array('empty'=>'- select role')); ?>
+		<?php echo $form->error($model,'role'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->textField($model,'password',array('size'=>60,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'password'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'avatar'); ?>
+		<?php echo $form->textField($model,'avatar',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'avatar'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
@@ -31,18 +49,6 @@
 		<?php echo $form->labelEx($model,'homepage'); ?>
 		<?php echo $form->textField($model,'homepage',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'homepage'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'avatar'); ?>
-		<?php echo $form->textField($model,'avatar',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'avatar'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->textField($model,'role',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'role'); ?>
 	</div>
 
 	<div class="row buttons">
