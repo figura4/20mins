@@ -48,6 +48,7 @@ class Review extends Content
 		$fromParent = parent::rules();
 		
 		$fromChild = array(
+			array('original_title, vote, cover, author_id', 'required'),
 			array('author_id', 'numerical', 'integerOnly'=>true),
 			array('page_title, italian_title, italian_subtitle, original_title, original_subtitle, seasons', 'length', 'max'=>200),
 			array('type, editor', 'length', 'max'=>50),
@@ -112,5 +113,10 @@ class Review extends Content
 		return array(
 			'condition'=>"type='book' | type='tv' | type='movie'",
 		);
+	}
+	
+	public function beforeSave(){
+		$this->user_id = 1;
+		return parent::beforeSave();
 	}
 }

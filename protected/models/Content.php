@@ -45,7 +45,7 @@ class Content extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('page_title, user_id, published, type, body, pub_date, created_on, updated_on', 'required'),
+			array('page_title, user_id, published, type, body, pub_date', 'required'),
 			array('user_id, published, vote', 'numerical', 'integerOnly'=>true),
 			array('picture1, picture2, picture3', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -140,4 +140,13 @@ class Content extends CActiveRecord
 			'condition'=>"type='content'",
 		);
 	}*/
+	
+	public function beforeSave(){
+		if ($this->isNewRecord)
+			$this->created_on = new CDbExpression('NOW()');
+		else
+			$this->updated_on = new CDbExpression('NOW()');
+	
+		return parent::beforeSave();
+	}
 }

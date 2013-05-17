@@ -41,7 +41,7 @@ class Author extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, created_on, updated_on', 'required'),
+			array('first_name, last_name', 'required'),
 			array('first_name, last_name', 'length', 'max'=>50),
 			array('bio_url', 'length', 'max'=>200),
 			array('picture', 'length', 'max'=>100),
@@ -104,5 +104,19 @@ class Author extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getFull_name()
+	{
+		return $this->last_name . ", " . $this->first_name;
+	}
+	
+	public function beforeSave(){
+		if ($this->isNewRecord)
+			$this->created_on = new CDbExpression('NOW()');
+		else
+			$this->updated_on = new CDbExpression('NOW()');
+	
+		return parent::beforeSave();
 	}
 }
