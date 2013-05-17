@@ -26,6 +26,12 @@
 		<?php echo $form->textField($model,'last_name',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'last_name'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'picture'); ?>
+		<?php echo $form->fileField($model,'picture'); ?>
+		<?php echo $form->error($model,'picture'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bio'); ?>
@@ -37,12 +43,6 @@
 		<?php echo $form->labelEx($model,'bio_url'); ?>
 		<?php echo $form->textField($model,'bio_url',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'bio_url'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'picture'); ?>
-		<?php echo $form->textField($model,'picture',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'picture'); ?>
 	</div>
 
 	<div class="row buttons">

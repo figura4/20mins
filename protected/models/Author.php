@@ -46,6 +46,7 @@ class Author extends CActiveRecord
 			array('bio_url', 'length', 'max'=>200),
 			array('picture', 'length', 'max'=>100),
 			array('bio', 'safe'),
+			array('picture', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, bio, created_on, updated_on', 'safe', 'on'=>'search'),

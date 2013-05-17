@@ -46,9 +46,10 @@ class Review extends Content
 	public function rules()
 	{
 		$fromParent = parent::rules();
+		unset($fromParent[0]);
 		
 		$fromChild = array(
-			array('original_title, vote, cover, author_id', 'required'),
+			array('published, type, body, pub_date, original_title, vote, author_id', 'required'),
 			array('author_id', 'numerical', 'integerOnly'=>true),
 			array('page_title, italian_title, italian_subtitle, original_title, original_subtitle, seasons', 'length', 'max'=>200),
 			array('type, editor', 'length', 'max'=>50),
@@ -115,8 +116,17 @@ class Review extends Content
 		);
 	}
 	
+	public function getFull_title() 
+	{
+		return (empty($this->italian_title)) ? $this->original_title : $this->italian_title;
+	}
+	
 	public function beforeSave(){
-		$this->user_id = 1;
-		return parent::beforeSave();
+		if(parent::beforeSave()) {
+			$this->user_id = 1;
+			$this->page_title = $this->full_title;
+			return true;
+		}
+		return false;
 	}
 }

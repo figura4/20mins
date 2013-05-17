@@ -9,28 +9,24 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'review-form',
 	'enableAjaxValidation'=>true,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'page_title'); ?>
-		<?php echo $form->textField($model,'page_title',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'page_title'); ?>
-	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->dropDownList($model,'type', array('book' => 'Book', 'movie' => 'Movie', 'tv' => 'Tv show')); ?>
+		<?php echo $form->dropDownList($model,'type', array('book' => 'Book', 'movie' => 'Movie', 'tv' => 'Tv show'), array('empty'=>'- select review type')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'author_id'); ?>
-		<?php echo $form->dropDownList($model,'author_id', CHtml::listData(Author::model()->findAll(array('order'=>'last_name')), 'id', 'full_name'), array('empty'=>'- select Author')); ?>
+		<?php echo $form->dropDownList($model,'author_id', CHtml::listData(Author::model()->findAll(array('order'=>'last_name')), 'id', 'full_name'), array('empty'=>'- select author')); ?>
 		<?php echo $form->error($model,'author_id'); ?>
+		<?php echo CHtml::link('New author', $this->createUrl('/author/create'), array('target'=>'_blank')); ?>
 	</div>
 	
 	<div class="row">
@@ -59,7 +55,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'published'); ?>
-		<?php echo $form->checkBox($model, 'published'); ?>
+		<?php echo $form->checkBox($model, 'published', array('checked'=>'checked')); ?>
 		<?php echo $form->error($model,'published'); ?>
 	</div>
 
@@ -70,22 +66,34 @@
 		?>
 		<?php echo $form->error($model,'pub_date'); ?>
 	</div>
-
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'vote'); ?>
+		<?php echo $form->dropDownList($model,'vote', array(
+														'10' => '10 - Capolavoro!', 
+														'9'  => '9 - Eccellente',
+														'8'  => '8 - Ottimo',
+														'7'  => '7 - Buono',
+														'6'  => '6 - Discreto',
+														'5'  => '5 - Mediocre',
+														'4'  => '4 - Scarso',
+														'3'  => '3 - Pessimo',
+														'2'  => '2 - Orribile',
+														'1'  => '1 - Una chiavica',
+														'0'  => '0 - Criminale',
+				), array('empty'=>'- pick a vote')); ?>
+		<?php echo $form->error($model,'vote'); ?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($model,'vote'); ?>
-		<?php echo $form->textField($model,'vote'); ?>
-		<?php echo $form->error($model,'vote'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cover'); ?>
-		<?php echo $form->textField($model,'cover',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->fileField($model,'cover'); ?>
 		<?php echo $form->error($model,'cover'); ?>
 	</div>
 	
@@ -101,18 +109,7 @@
 		<?php echo $form->error($model,'language'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'actors'); ?>
-		<?php echo $form->textArea($model,'actors',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'actors'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'nation'); ?>
-		<?php echo $form->textField($model,'nation',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'nation'); ?>
-	</div>
-
+	<h3>Book review fields</h3>
 	<div class="row">
 		<?php echo $form->labelEx($model,'pages'); ?>
 		<?php echo $form->textField($model,'pages',array('size'=>5,'maxlength'=>5)); ?>
@@ -123,6 +120,19 @@
 		<?php echo $form->labelEx($model,'editor'); ?>
 		<?php echo $form->textField($model,'editor',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'editor'); ?>
+	</div>
+	
+	<h3>Movie/Tv review fields</h3>
+	<div class="row">
+		<?php echo $form->labelEx($model,'actors'); ?>
+		<?php echo $form->textArea($model,'actors',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'actors'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'nation'); ?>
+		<?php echo $form->textField($model,'nation',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'nation'); ?>
 	</div>
 
 	<div class="row">
