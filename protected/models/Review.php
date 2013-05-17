@@ -123,7 +123,6 @@ class Review extends Content
 	
 	public function beforeSave(){
 		if(parent::beforeSave()) {
-			$this->user_id = 1;
 			$this->page_title = $this->full_title;
 			return true;
 		}
