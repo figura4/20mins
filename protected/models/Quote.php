@@ -40,7 +40,7 @@ class Quote extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('body, content_id, random, created_on, updated_on', 'required'),
+			array('body, content_id, random', 'required'),
 			array('content_id, random', 'numerical', 'integerOnly'=>true),
 			array('source', 'length', 'max'=>200),
 			// The following rule is used by search().
@@ -99,5 +99,14 @@ class Quote extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function beforeSave(){
+		if ($this->isNewRecord)
+			$this->created_on = new CDbExpression('NOW()');
+		else
+			$this->updated_on = new CDbExpression('NOW()');
+
+		return parent::beforeSave();
 	}
 }

@@ -29,26 +29,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content_id'); ?>
-		<?php echo $form->textField($model,'content_id'); ?>
+		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Review::model()->findAll(array('condition' => "type != 'content'", 'order' => 'original_title')), 'id', 'original_title'), array('empty'=>'- select review')); ?>
 		<?php echo $form->error($model,'content_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'random'); ?>
-		<?php echo $form->textField($model,'random'); ?>
+		<?php echo $form->checkBox($model, 'random', array('checked'=>'checked')); ?>
 		<?php echo $form->error($model,'random'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_on'); ?>
-		<?php echo $form->textField($model,'created_on'); ?>
-		<?php echo $form->error($model,'created_on'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_on'); ?>
-		<?php echo $form->textField($model,'updated_on'); ?>
-		<?php echo $form->error($model,'updated_on'); ?>
 	</div>
 
 	<div class="row buttons">
