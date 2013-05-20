@@ -112,7 +112,7 @@ class Review extends Content
 	
 	function defaultScope(){
 		return array(
-			'condition'=>"type='book' | type='tv' | type='movie'",
+			'condition'=>"type='book' || type='tv' || type='movie'",
 		);
 	}
 	
