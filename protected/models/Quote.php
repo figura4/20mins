@@ -109,4 +109,14 @@ class Quote extends CActiveRecord
 
 		return parent::beforeSave();
 	}
+	
+	static function getRandomQuote() {
+		$quote = Quote::model()->find(array(
+			'select' => '*, rand() as rand',
+			'limit'  => '1',
+			'order'  => 'rand'
+		));
+		
+		return $quote;
+	}
 }
