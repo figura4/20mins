@@ -40,6 +40,10 @@
  */
 class Review extends Content
 {
+	static function model($className=__CLASS__) {
+		return parent::model($className);
+	}
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -76,7 +80,7 @@ class Review extends Content
 		// class name for the relations automatically generated below.
 		return array(
 			'author' => array(self::BELONGS_TO, 'Author', 'author_id'),
-			'quotes' => array(self::HAS_MANY, 'Quote', 'content_id'),
+			'quote' => array(self::HAS_MANY, 'Quote', 'content_id'),
 		);
 	}
 

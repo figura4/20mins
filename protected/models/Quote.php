@@ -57,7 +57,7 @@ class Quote extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'content'=>array(self::BELONGS_TO, 'Content', 'content_id'),
+			'review'=>array(self::BELONGS_TO, 'Review', 'content_id'),
 		);
 	}
 

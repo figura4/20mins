@@ -15,7 +15,11 @@ $this->pageTitle=Yii::app()->name;
 </ul>
 
 <p>
-	<?php echo Quote::getRandomQuote()->body; ?>
+	<?php 
+		$list = Review::model()->findAll();
+		echo $list[0]->type; 
+		echo count($list);
+	?>
 </p>
 
 <p>For more details on how to further develop this application, please read

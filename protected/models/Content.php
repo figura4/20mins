@@ -126,12 +126,12 @@ class Content extends CActiveRecord
 	protected function instantiate($attributes){
 		switch($attributes['type']){
 			case 'content':
-				$class='Content';
+				$class = get_class($this);;
 				break;
 			default:
-				$class='Review';
+				$class = 'Review';
 		}
-		$model=new $class(null);
+		$model = new $class(null);
 		return $model;
 	}
 	
