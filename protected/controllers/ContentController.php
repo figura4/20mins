@@ -70,6 +70,7 @@ class ContentController extends Controller
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
+			$model->tags = $_POST['Content']['tags'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

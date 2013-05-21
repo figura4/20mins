@@ -19,6 +19,8 @@
  */
 class Content extends CActiveRecord
 {
+	public $tags;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -123,7 +125,8 @@ class Content extends CActiveRecord
 	 * @param array $attributes
 	 * @return Content
 	 */
-	protected function instantiate($attributes){
+	protected function instantiate($attributes)
+	{
 		switch($attributes['type']){
 			case 'content':
 				$class = get_class($this);;
@@ -141,7 +144,8 @@ class Content extends CActiveRecord
 		);
 	}
 	
-	public function beforeSave(){
+	protected function beforeSave()
+	{
 		if(parent::beforeSave()) {
 			if ($this->isNewRecord)
 				$this->created_on = new CDbExpression('NOW()');
@@ -152,5 +156,21 @@ class Content extends CActiveRecord
 			return true;
 		}
 		return false;
+	}
+	
+	protected function afterSave()
+	{
+		if(parent::afterSave()) {
+			$this->categories = $this->tags;
+			$this->save;
+			return true;
+		}
+		return false;
+	}
+	
+	public function behaviors()
+	{
+		return array( 'CAdvancedArBehavior' => array(
+				'class' => 'application.extensions.CAdvancedArBehavior'));
 	}
 }

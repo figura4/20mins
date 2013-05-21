@@ -42,6 +42,12 @@
 		<?php echo $form->textField($model,'pub_date', array('value' => date("Y-m-d H:i:s"))); ?>
 		<?php echo $form->error($model,'pub_date'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'tags'); ?>
+		<?php echo $form->checkBoxList($model, 'tags', Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name'));  ?>
+		<?php echo $form->error($model,'tags'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
