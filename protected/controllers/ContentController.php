@@ -63,7 +63,7 @@ class ContentController extends Controller
 	public function actionCreate()
 	{
 		$model=new Content;
-
+		xdebug_break();
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 

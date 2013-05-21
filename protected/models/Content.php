@@ -162,7 +162,7 @@ class Content extends CActiveRecord
 	{
 		if(parent::afterSave()) {
 			$this->categories = $this->tags;
-			$this->save;
+			$this->save();
 			return true;
 		}
 		return false;
