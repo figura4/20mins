@@ -63,14 +63,14 @@ class ContentController extends Controller
 	public function actionCreate()
 	{
 		$model=new Content;
-		xdebug_break();
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
-			$model->tags = $_POST['Content']['tags'];
+			$model->categories = $_POST['Content']['tags'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -95,6 +95,7 @@ class ContentController extends Controller
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
+			$model->categories = $_POST['Content']['tags'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

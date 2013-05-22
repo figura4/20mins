@@ -66,8 +66,8 @@ class Content extends CActiveRecord
 		return array(
 			'comments' => array(self::HAS_MANY, 'Comment', 'content_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-			'tags' => array(self::MANY_MANY, 'Tag',
-							'tbl_content_tag(content_id, tag_id)'),
+			'categories' => array(self::MANY_MANY, 'Tag',
+							'tbl_tag_content(content_id, tag_id)'),
 		);
 	}
 
@@ -153,16 +153,6 @@ class Content extends CActiveRecord
 				$this->updated_on = new CDbExpression('NOW()');
 			
 			$this->user_id = 1;
-			return true;
-		}
-		return false;
-	}
-	
-	protected function afterSave()
-	{
-		if(parent::afterSave()) {
-			$this->categories = $this->tags;
-			$this->save();
 			return true;
 		}
 		return false;

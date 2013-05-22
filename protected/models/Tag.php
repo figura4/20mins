@@ -57,7 +57,7 @@ class Tag extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'tags' => array(self::MANY_MANY, 'Content',
-						'tbl_content_tag(tag_id, content_id)'),
+						'tbl_tag_content(tag_id, content_id)'),
 		);
 	}
 
