@@ -19,7 +19,6 @@
  */
 class Content extends CActiveRecord
 {
-	public $tags;
 	
 	/**
 	 * Returns the static model of the specified AR class.

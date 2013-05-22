@@ -45,7 +45,12 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'tags'); ?>
-		<?php echo $form->checkBoxList($model, 'tags', Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name'));  ?>
+		<?php //echo $form->checkBoxList($model, 'tagIds', Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name'));  ?>
+		<?php echo CHtml::checkBoxList(
+							'Content[categories]',
+							array_map(create_function('$o', 'return $o->id;'), $model->categories), 
+							Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name')
+		); ?>
 		<?php echo $form->error($model,'tags'); ?>
 	</div>
 
