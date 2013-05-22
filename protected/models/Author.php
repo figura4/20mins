@@ -15,6 +15,8 @@
  */
 class Author extends CActiveRecord
 {
+	public $uploadedPicture;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -44,9 +46,9 @@ class Author extends CActiveRecord
 			array('first_name, last_name', 'required'),
 			array('first_name, last_name', 'length', 'max'=>50),
 			array('bio_url', 'length', 'max'=>200),
-			array('picture', 'length', 'max'=>100),
+			array('picture', 'length', 'max'=>255),
 			array('bio', 'safe'),
-			array('picture', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
+			array('uploadedPicture', 'file', 'types'=>'jpg, jpeg, gif, png', 'allowEmpty'=>true, 'safe'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, bio, created_on, updated_on', 'safe', 'on'=>'search'),
@@ -76,7 +78,7 @@ class Author extends CActiveRecord
 			'last_name' => 'Last Name',
 			'bio' => 'Bio',
 			'bio_url' => 'Bio Url',
-			'picture' => 'Picture',
+			'uploadedPicture' => 'Picture',
 			'created_on' => 'Created On',
 			'updated_on' => 'Updated On',
 		);
@@ -118,6 +120,16 @@ class Author extends CActiveRecord
 		else
 			$this->updated_on = new CDbExpression('NOW()');
 	
+		if (is_object($this->uploadedPicture) && get_class($this->uploadedPicture)==='CUploadedFile') 
+			$this->picture = $this->uploadedPicture->getName();
+		
 		return parent::beforeSave();
+	}
+	
+	public function afterSave() {
+		if (is_object($this->uploadedPicture) && get_class($this->uploadedPicture))
+			$this->uploadedPicture->saveAs(Yii::getPathOfAlias('webroot').'/images/author_pictures/'.$this->uploadedPicture);
+		
+		return parent::afterSave();
 	}
 }

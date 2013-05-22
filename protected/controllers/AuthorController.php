@@ -69,7 +69,8 @@ class AuthorController extends Controller
 
 		if(isset($_POST['Author']))
 		{
-			$model->attributes=$_POST['Author'];
+			$model->attributes = $_POST['Author'];
+			$model->uploadedPicture = CUploadedFile::getInstance($model, 'uploadedPicture');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,6 +95,7 @@ class AuthorController extends Controller
 		if(isset($_POST['Author']))
 		{
 			$model->attributes=$_POST['Author'];
+			$model->uploadedPicture = CUploadedFile::getInstance($model, 'uploadedPicture');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
