@@ -87,7 +87,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'Review[body]')); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 

@@ -22,19 +22,19 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'published'); ?>
-		<?php echo $form->checkBox($model, 'published', array('checked'=>'checked')); ?>
-		<?php echo $form->error($model,'published'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->hiddenField($model,'type',array('value'=>'content'));?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'Content[body]')); ?>
 		<?php echo $form->error($model,'body'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'published'); ?>
+		<?php echo $form->checkBox($model, 'published', array('checked'=>'checked')); ?>
+		<?php echo $form->error($model,'published'); ?>
 	</div>
 	
 	<div class="row">

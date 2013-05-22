@@ -16,6 +16,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'content_id'); ?>
+		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Review::model()->findAll(array('order' => 'original_title')), 'id', 'original_title'), array('empty'=>'- select review')); ?>
+		<?php echo $form->error($model,'content_id'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'body'); ?>
@@ -25,12 +31,6 @@
 		<?php echo $form->labelEx($model,'source'); ?>
 		<?php echo $form->textField($model,'source',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'source'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'content_id'); ?>
-		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Review::model()->findAll(array('order' => 'original_title')), 'id', 'original_title'), array('empty'=>'- select review')); ?>
-		<?php echo $form->error($model,'content_id'); ?>
 	</div>
 
 	<div class="row">
