@@ -21,9 +21,12 @@ class m130514_145822_create_users_table extends CDbMigration
 					  array(
 					  	'id' 				=> 1,
 					  	'username' 			=> 'figura4',
+					  	'email'				=> 'fuffa@fuffa.com',
 					  	'hashed_password' 	=> 'a7WNIGmgCQXkU',
 					  	'salt' 				=> 'a7_)OWiw%n%sP,c`h1l(J6;PvO!{A>x$UY,%1t{6d!*5,ltt}b',
 					  	'role' 				=> 'admin',
+					  	'created_on'			=> '2013-05-17 15:42:23',
+					  	'updated_on'		=> '2013-05-17 15:42:23',
 		));
 	}
 

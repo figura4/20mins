@@ -18,6 +18,6 @@ class m130514_133525_create_authors_table extends CDbMigration
 
 	public function safeDown()
 	{
-		$this->dropTable('{{tbl_author}}');
+		$this->dropTable('{{author}}');
 	}
 }
