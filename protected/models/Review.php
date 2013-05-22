@@ -78,10 +78,14 @@ class Review extends Content
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
+		$fromParent = parent::relations();
+		
+		$fromChild = array(
 			'author' => array(self::BELONGS_TO, 'Author', 'author_id'),
 			'quote' => array(self::HAS_MANY, 'Quote', 'content_id'),
 		);
+		
+		return array_merge($fromParent, $fromChild);
 	}
 
 	/**
@@ -131,5 +135,10 @@ class Review extends Content
 			return true;
 		}
 		return false;
+	}
+	
+	public function behaviors()
+	{
+		return parent::behaviors(); 
 	}
 }

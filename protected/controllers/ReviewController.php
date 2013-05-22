@@ -70,6 +70,7 @@ class ReviewController extends Controller
 		if(isset($_POST['Review']))
 		{
 			$model->attributes=$_POST['Review'];
+			$model->categories = (array_key_exists('categories', $_POST['Review'])) ? $_POST['Review']['categories'] : array();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,6 +95,7 @@ class ReviewController extends Controller
 		if(isset($_POST['Review']))
 		{
 			$model->attributes=$_POST['Review'];
+			$model->categories = (array_key_exists('categories', $_POST['Review'])) ? $_POST['Review']['categories'] : array();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

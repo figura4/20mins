@@ -140,6 +140,17 @@
 		<?php echo $form->textField($model,'seasons',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'seasons'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'tags'); ?>
+		<?php //echo $form->checkBoxList($model, 'tagIds', Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name'));  ?>
+		<?php echo CHtml::checkBoxList(
+							'Review[categories]',
+							array_map(create_function('$o', 'return $o->id;'), $model->categories), 
+							Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name')
+		); ?>
+		<?php echo $form->error($model,'tags'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
