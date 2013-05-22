@@ -40,6 +40,8 @@
  */
 class Review extends Content
 {
+	public $uploadedCover;
+	
 	static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
@@ -58,6 +60,7 @@ class Review extends Content
 			array('page_title, italian_title, italian_subtitle, original_title, original_subtitle, seasons', 'length', 'max'=>200),
 			array('type, editor', 'length', 'max'=>50),
 			array('cover, picture1, picture2, picture3', 'length', 'max'=>100),
+			array('uploadedCover', 'file', 'types'=>'jpg, jpeg, gif, png', 'allowEmpty'=>true, 'safe'=>true),
 			array('year', 'length', 'max'=>4),
 			array('nation', 'length', 'max'=>30),
 			array('pages', 'length', 'max'=>5),
@@ -132,6 +135,10 @@ class Review extends Content
 	public function beforeSave(){
 		if(parent::beforeSave()) {
 			$this->page_title = $this->full_title;
+			
+			if (is_object($this->uploadedCover) && get_class($this->uploadedCover)==='CUploadedFile')
+				$this->cover = $this->uploadedCover->getName();
+			
 			return true;
 		}
 		return false;
@@ -140,5 +147,12 @@ class Review extends Content
 	public function behaviors()
 	{
 		return parent::behaviors(); 
+	}
+	
+	public function afterSave() {
+		if (is_object($this->uploadedCover) && get_class($this->uploadedCover))
+			$this->uploadedCover->saveAs(Yii::getPathOfAlias('webroot').'/images/covers/'.$this->uploadedCover);
+	
+		return parent::afterSave();
 	}
 }

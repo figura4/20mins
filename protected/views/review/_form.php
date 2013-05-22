@@ -93,8 +93,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cover'); ?>
-		<?php echo $form->fileField($model,'cover'); ?>
+		<?php echo $form->textField($model,'cover',array('size'=>50,'maxlength'=>50,'readonly'=>'true','disabled'=>'true')); ?>
 		<?php echo $form->error($model,'cover'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'uploadedCover'); ?>
+		<?php echo $form->fileField($model,'uploadedCover'); ?>
+		<?php echo $form->error($model,'uploadedCover'); ?>
 	</div>
 	
 	<div class="row">
