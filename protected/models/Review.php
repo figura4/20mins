@@ -151,7 +151,7 @@ class Review extends Content
 	
 	public function afterSave() {
 		if (is_object($this->uploadedCover) && get_class($this->uploadedCover))
-			$this->uploadedCover->saveAs(Yii::getPathOfAlias('webroot').'/images/covers/'.$this->uploadedCover);
+			$this->uploadedCover->saveAs(Yii::getPathOfAlias('webroot').Yii::app()->params['coversPath'].$this->uploadedCover);
 	
 		return parent::afterSave();
 	}

@@ -57,6 +57,8 @@ return array(
 			'password' => 'pwdfuffa',
 			'tablePrefix' => 'tbl_',
 			'charset' => 'utf8',
+			'enableProfiling' => true,
+			'enableParamLogging' => true,
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -73,6 +75,10 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
+				array(
+						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+						'ipFilters'=>array('127.0.0.1','192.168.56.1'),
+				),
 			),
 		),
 	),
@@ -82,5 +88,9 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'authorPicsPath'=>'/images/authors/',
+		'imagesPath' => '/images/images/',
+		'coversPath' => '/images/covers/',
+		'avatarsPath' => '/images/avatars/',
 	),
 );

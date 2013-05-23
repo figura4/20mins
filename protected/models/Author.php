@@ -128,7 +128,7 @@ class Author extends CActiveRecord
 	
 	public function afterSave() {
 		if (is_object($this->uploadedPicture) && get_class($this->uploadedPicture))
-			$this->uploadedPicture->saveAs(Yii::getPathOfAlias('webroot').'/images/author_pictures/'.$this->uploadedPicture);
+			$this->uploadedPicture->saveAs(Yii::getPathOfAlias('webroot').Yii::app()->params['authorPicsPath'].$this->uploadedPicture);
 		
 		return parent::afterSave();
 	}
