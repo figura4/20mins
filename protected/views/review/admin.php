@@ -50,8 +50,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'published',
 		'type',
 		'pub_date',
-		'created_on',
-		'updated_on',
+		array(            
+			'header' => 'tags',
+			'type' => 'raw',
+			'value' => 'CHtml::link( "Tags", Yii::app()->createUrl("review/tag", array("id" => $data->id)))', 
+		),
 		array(
 			'class'=>'CButtonColumn',
 		),

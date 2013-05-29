@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
-		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'Content[body]')); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'body')); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 	
@@ -43,17 +43,6 @@
 		<?php echo $form->error($model,'pub_date'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'tags'); ?>
-		<?php //echo $form->checkBoxList($model, 'tagIds', Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name'));  ?>
-		<?php echo CHtml::checkBoxList(
-							'Content[categories]',
-							array_map(create_function('$o', 'return $o->id;'), $model->categories), 
-							Chtml::listData(Tag::model()->findAll(array('order'=>'name')),'id','name')
-		); ?>
-		<?php echo $form->error($model,'tags'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
