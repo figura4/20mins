@@ -31,7 +31,7 @@
                 array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-                array('label'=>'Admin', 'url'=>'',
+                array('label'=>'Admin', 'url'=>'', 'visible'=>!Yii::app()->user->isGuest,
                 	'items'=>array(
                     	array('label'=>'Contents', 'url'=>array('/content/admin'), 'visible'=>!Yii::app()->user->isGuest),
 						array('label'=>'Reviews', 'url'=>array('/review/admin'), 'visible'=>!Yii::app()->user->isGuest),
