@@ -12,7 +12,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<?php if(($page == '')||($page == 'homepage2')||($page == 'homepage3')||($page == 'homepage4')||($page == 'homepage5')||($page == 'homepage6')) echo 'active';?>  dropdown">
-              <a href="<?php echo Yii::app()->createUrl("/site/index") ?>" data-description="our home page" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+              <a href="index.php" data-description="our home page" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="index.php">Home 1 - Nivoslider</a></li>
                 <li><a href="index.php?page=homepage2">Home 2 - Bootstrap carousal</a></li>
