@@ -2,6 +2,8 @@
 
 class SiteController extends Controller
 {
+	public $layout='//layouts/admin/column2';
+	
 	/**
 	 * Declares class-based actions.
 	 */
