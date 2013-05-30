@@ -16,9 +16,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
+		<?php echo $form->labelEx($model,'content_id'); ?>
+		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Review::model()->findAll(array('order' => 'original_title')), 'id', 'original_title'), array('empty'=>'- select review')); ?>
+		<?php echo $form->error($model,'content_id'); ?>
 	</div>
 
 	<div class="row">
@@ -32,23 +32,11 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>80)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
-
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'content_id'); ?>
-		<?php echo $form->textField($model,'content_id'); ?>
-		<?php echo $form->error($model,'content_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_on'); ?>
-		<?php echo $form->textField($model,'created_on'); ?>
-		<?php echo $form->error($model,'created_on'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_on'); ?>
-		<?php echo $form->textField($model,'updated_on'); ?>
-		<?php echo $form->error($model,'updated_on'); ?>
+		<?php echo $form->labelEx($model,'body'); ?>
+		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'body'); ?>
 	</div>
 
 	<div class="row buttons">
