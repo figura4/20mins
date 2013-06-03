@@ -13,10 +13,10 @@
 
 	<!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="css/stylesheets/screen.css">
-	<link rel="stylesheet" href="css/stylesheets/jquery.fancybox-1.3.4.css">
-	<link rel="stylesheet" href="css/icon_fonts.css">
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/subtract/stylesheets/screen.css">
+	<link rel="stylesheet" href="css/subtract/stylesheets/jquery.fancybox-1.3.4.css">
+	<link rel="stylesheet" href="css/subtract/icon_fonts.css">
+	<link rel="stylesheet" href="css/subtract/flexslider.css">
 	<!--[if IE ]><link rel="stylesheet" href="css/ie.css"><!--<![endif]-->
 	
 	

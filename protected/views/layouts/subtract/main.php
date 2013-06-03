@@ -7,7 +7,7 @@
 
 <!-- Head
  ================================================== -->
-<?php $this->renderPartial('/protected/views/layouts/_head'); ?> 
+<?php $this->renderPartial('//layouts/subtract/_head'); ?> 
 
 <body>
 
@@ -17,7 +17,7 @@
 		
 		<!-- Header/Main Nav
 		================================================== -->
-		<?php $this->renderPartial('/protected/views/layouts/_header'); ?> 
+		<?php $this->renderPartial('//layouts/subtract/_header'); ?> 
 				
 		<!-- Main Content
 		================================================== -->
@@ -25,19 +25,19 @@
 			<?php echo $content; ?>
 			
 			<!--Sidebar-->
-			<?php $this->renderPartial('/protected/views/layouts/_sidebar'); ?>
+			<?php $this->renderPartial('//layouts/subtract/_sidebar'); ?>
 			<div class="bottom"></div>
 		</div>
 		
 		<!-- Footer
 		================================================== -->
-		<?php $this->renderPartial('/protected/views/layouts/_footer'); ?> 
+		<?php $this->renderPartial('//layouts/subtract/_footer'); ?> 
 
 	</div><!-- End Wrap -->
 
 	<!-- Javascript/jQuery
 	================================================== -->
-	<?php $this->renderPartial('/protected/views/layouts/_javascript'); ?> 
+	<?php $this->renderPartial('//layouts/subtract/_javascript'); ?> 
 
 <!-- End Document
 ================================================== -->
