@@ -15,9 +15,9 @@
 						<div class="clearfix"></div>
 					</div>
 					<div class="twitter-follow">
-						<a href="https://twitter.com/joughbagh"
+						<a href="https://twitter.com/figura_4"
 							class="twitter-follow-button" data-show-count="false"
-							data-lang="en">Follow @joughbagh</a>
+							data-lang="en">Follow @figura4</a>
 					</div>
 				</div>
 				<div class="one-third column">

@@ -241,7 +241,7 @@ $(window).load(function() {
   /* Twitter Feed */
   $(function($) {
     $(".tweet").tweet({
-      username : "joughbagh",
+      username : "figura_4",
       count : 20,
       template : "{text}",
       loading_text : "loading ..."
