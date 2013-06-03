@@ -4,44 +4,11 @@
 <!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>Subtraction | HTML Theme</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+<!-- Head
+ ================================================== -->
+<?php $this->renderPartial('/protected/views/layouts/_head'); ?> 
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="css/stylesheets/screen.css">
-	<link rel="stylesheet" href="css/stylesheets/jquery.fancybox-1.3.4.css">
-	<link rel="stylesheet" href="css/icon_fonts.css">
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!--[if IE ]><link rel="stylesheet" href="css/ie.css"><!--<![endif]-->
-	
-	
-	<!-- Google Fonts
-  ================================================== -->
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="img/favicon.png">
-	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-
-</head>
 <body>
 
 	<!-- Primary Page Layout
@@ -50,54 +17,8 @@
 		
 		<!-- Header/Main Nav
 		================================================== -->
-		<header>
-			<div class="container">
-				<div class="sixteen columns">
-					<div class="logo">
-						<a href="#">Subtraction</a>
-						<h1 id="title">Web Solutions</h1>
-					</div>
-		      <ul class="nav-bar right" id="nav-bar">
-	      		<li class="has-flyout"><a href="index.html">Home</a>
-		      		<ul class="flyout">
-		      			<li><a href="home-alt.html">Home Alt</a></li>
-		      		</ul>
-		      	<li class="has-flyout"><a href="#">Pages</a>
-		      		<ul class="flyout">
-		      			<li><a href="about.html">About</a></li>
-		      			<li><a href="elements.html">Elements</a></li>
-		      			<li><a href="404.html">404 Page</a></li>
-		      			<li><a href="full-width.html">Full Width</a></li>
-		      			<li><a href="columns.html">Columns</a></li>
-		      			<li><a href="icons.html">Icons</a></li>
-		      		</ul>
-		      	<li class="has-flyout"><a href="#">Portfolio</a>
-		      		<ul class="flyout">
-		      			<li><a href="portfolio-3.html">3 Column</a></li>
-		      			<li><a href="portfolio-4.html">4 Column</a></li>
-		      			<li><a href="portfolio-single.html">Portfolio Single</a></li>
-		      			<li><a href="portfolio-single-alt.html">Portfolio Single Alt</a></li>
-		      		</ul>
-		      	<li class="active has-flyout"><a href="blog.html">Blog</a>
-		      		<ul class="flyout">
-		      			<li><a href="single-post.html">Blog Single Post</a></li>
-		      			<li><a href="single-post-video.html">Blog Single Video</a></li>
-		      		</ul>
-		      	<li><a href="contact.html">Contact</a>
-		      </ul>
-				</div>
-			</div>
-		</header>
-		
-		<div class="page-header">
-			<div class="container">
-				<div class="sixteen columns">
-					<h1>Subtract!</h1>
-					<span class="sub-title">The official Subtraction blog!</span>
-				</div>
-			</div>
-		</div>
-		
+		<?php $this->renderPartial('/protected/views/layouts/_header'); ?> 
+				
 		<!-- Main Content
 		================================================== -->
 		<div class="container">
@@ -222,49 +143,7 @@
 		
 		<!-- Footer
 		================================================== -->
-		<footer>
-			<div class="container">
-				<div class="one-third column">
-					<h5>About Us</h5>
-					<p>Curabitur dolor tellus, porta vel tincidunt sed, lacinia ac nunc. Aenean vitae vehicula leo. Aliquam fringilla magna eu mi bibendum bibendum. Praesent eu leo nulla, sit amet porta eros. Aenean ante leo, auctor vitae mollis quis, accumsan sit amet ante.</p>
-				</div>
-				<div class="one-third column">
-					<h5>Twitter</h5>
-					<div class="twitter-container">
-						<i class="icon-twitter"></i>
-						<div class="tweet">
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="twitter-follow">
-						<a href="https://twitter.com/joughbagh" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @joughbagh</a>
-					</div>
-				</div>
-				<div class="one-third column">
-					<h5>Contact</h5>
-					<p><i class="icon-phone contact"></i>555-555-5555</p>
-					<p><i class="icon-home contact"></i>2100 Alamanda Dr Miami, FL 33181</p>
-					<p><i class="icon-envelope-alt contact"></i><a href="#">kevin@ksdesigning.com</a></p>
-					<p><i class="icon-globe contact"></i><a href="">http://www.vimeo.com</a></p>
-				</div>
-			</div>
-		</footer>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="eight columns">
-					<div class="copy">&copy; 2013 KS Designing</div>
-				</div>
-				<div class="eight columns">
-					<ul class="social">
-						<li class="tool" title="Facebook"><a href="#" class="icon-facebook"></a></li>
-						<li class="tool" title="Twitter"><a href="#" class="icon-twitter"></a></li>
-						<li class="tool" title="Pinterest"><a href="#" class="icon-pinterest"></a></li>
-						<li class="tool" title="GitHub"><a href="#" class="icon-github"></a></li>
-						<li class="tool" title="LinkedIn"><a href="#" class="icon-linkedin"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php $this->renderPartial('/protected/views/layouts/_footer'); ?> 
 
 	</div><!-- End Wrap -->
 
