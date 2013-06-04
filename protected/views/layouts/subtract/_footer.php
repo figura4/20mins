@@ -1,7 +1,7 @@
 		<footer>
 			<div class="container">
 				<div class="one-third column">
-					<h5>About Us</h5>
+					<h5>About Me</h5>
 					<p>Curabitur dolor tellus, porta vel tincidunt sed, lacinia ac nunc.
 						Aenean vitae vehicula leo. Aliquam fringilla magna eu mi bibendum
 						bibendum. Praesent eu leo nulla, sit amet porta eros. Aenean ante
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<div class="one-third column">
-					<h5>Contact</h5>
+					<h5>Contatti</h5>
 					<p>
 						<i class="icon-phone contact"></i>555-555-5555
 					</p>
@@ -29,7 +29,7 @@
 						<i class="icon-home contact"></i>2100 Alamanda Dr Miami, FL 33181
 					</p>
 					<p>
-						<i class="icon-envelope-alt contact"></i><a href="#">kevin@ksdesigning.com</a>
+						<i class="icon-envelope-alt contact"></i><a href="#">staff@20mins.it</a>
 					</p>
 					<p>
 						<i class="icon-globe contact"></i><a href="">http://www.vimeo.com</a>
@@ -40,7 +40,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="eight columns">
-					<div class="copy">&copy; 2013 KS Designing</div>
+					<div class="copy">&copy; 2013 Oscar Riva</div>
 				</div>
 				<div class="eight columns">
 					<ul class="social">
