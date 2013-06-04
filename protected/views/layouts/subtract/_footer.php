@@ -17,7 +17,7 @@
 					<div class="twitter-follow">
 						<a href="https://twitter.com/figura_4"
 							class="twitter-follow-button" data-show-count="false"
-							data-lang="en">Follow @figura4</a>
+							data-lang="en">Follow @figura_4</a>
 					</div>
 				</div>
 				<div class="one-third column">
