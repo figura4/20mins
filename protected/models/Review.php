@@ -99,7 +99,7 @@ class Review extends Content
 		$fromParent = parent::rules();
 		
 		$fromChild = array(
-			'cover' => 'Cover',
+			'cover' => 'Cover (800x296)',
 			'picture1' => 'Picture1',
 			'picture2' => 'Picture2',
 			'picture3' => 'Picture3',

@@ -80,7 +80,7 @@
 														'3'  => '3 - Pessimo',
 														'2'  => '2 - Orribile',
 														'1'  => '1 - Una chiavica',
-														'0'  => '0 - Criminale',
+														'0'  => '0 - Da codice penale',
 				), array('empty'=>'- pick a vote')); ?>
 		<?php echo $form->error($model,'vote'); ?>
 	</div>
