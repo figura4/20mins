@@ -14,28 +14,6 @@
 						</blockquote>
 					</div>
 					
-					<div class="widget">
-						<div class="lined-header">
-							<h3><span>Fantascienza <i class="icon-list-ul"></i></span></h3>
-						</div>
-						<ul class="file">
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-						</ul>
-					</div>
-					
-					<div class="widget">
-						<div class="lined-header">
-							<h3><span>Fantasy <i class="icon-list-ul"></i></span></h3>
-						</div>
-						<ul class="file">
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-						</ul>
-					</div>
-					
 					<div id="toggle">
 						<div class="widget">
 							<div class="lined-header">
@@ -45,7 +23,7 @@
 							<div class="toggle">
 								<h5>Cyberpunk</h5>
 								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
+									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id. <br><a href="#" class="icon-circle-arrow-right"> Vai alle recensioni</a></p>
 								</div>
 							</div>
 							
@@ -125,6 +103,28 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					
+					<div class="widget">
+						<div class="lined-header">
+							<h3><span>Fantascienza <i class="icon-list-ul"></i></span></h3>
+						</div>
+						<ul class="file">
+							<li><a href="#">Unordered list item</a></li>
+							<li><a href="#">Unordered list item</a></li>
+							<li><a href="#">Unordered list item</a></li>
+						</ul>
+					</div>
+					
+					<div class="widget">
+						<div class="lined-header">
+							<h3><span>Fantasy <i class="icon-list-ul"></i></span></h3>
+						</div>
+						<ul class="file">
+							<li><a href="#">Unordered list item</a></li>
+							<li><a href="#">Unordered list item</a></li>
+							<li><a href="#">Unordered list item</a></li>
+						</ul>
 					</div>
 					
 					<div class="widget">
