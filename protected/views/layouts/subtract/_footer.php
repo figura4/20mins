@@ -2,10 +2,9 @@
 			<div class="container">
 				<div class="one-third column">
 					<h5>About Me</h5>
-					<p>Curabitur dolor tellus, porta vel tincidunt sed, lacinia ac nunc.
-						Aenean vitae vehicula leo. Aliquam fringilla magna eu mi bibendum
-						bibendum. Praesent eu leo nulla, sit amet porta eros. Aenean ante
-						leo, auctor vitae mollis quis, accumsan sit amet ante.</p>
+					<p>Informatico per passione e per mestiere,<br>
+					    cuoco per diletto,<br>
+					    appassionato del fantastico in tutte le sue forme</p>
 				</div>
 				<div class="one-third column">
 					<h5>Twitter</h5>
@@ -23,16 +22,19 @@
 				<div class="one-third column">
 					<h5>Contatti</h5>
 					<p>
-						<i class="icon-phone contact"></i>555-555-5555
+						<i class="icon-home contact"></i>Salacus Fields, New Crobuzon
 					</p>
 					<p>
-						<i class="icon-home contact"></i>2100 Alamanda Dr Miami, FL 33181
+						<i class="icon-envelope-alt contact"></i><a href="mailto:staff@20mins.it">staff@20mins.it</a>
 					</p>
 					<p>
-						<i class="icon-envelope-alt contact"></i><a href="#">staff@20mins.it</a>
+						<i class="icon-globe contact"></i><a href="http://www.anobii.com/figura4booklist/books">http://www.anobii.com/figura4booklist/books</a>
 					</p>
 					<p>
-						<i class="icon-globe contact"></i><a href="">http://www.vimeo.com</a>
+						<i class="icon-globe contact"></i><a href="http://bitgrabbers.com">http://bitgrabbers.com</a>
+					</p>
+					<p>
+						<i class="icon-globe contact"></i><a href="http://oscarriva.it">http://oscarriva.it</a>
 					</p>
 				</div>
 			</div>
@@ -44,15 +46,13 @@
 				</div>
 				<div class="eight columns">
 					<ul class="social">
-						<li class="tool" title="Facebook"><a href="#" class="icon-facebook"></a>
+						<li class="tool" title="Facebook"><a href="https://www.facebook.com/oscar.riva" class="icon-facebook"></a>
 						</li>
-						<li class="tool" title="Twitter"><a href="#" class="icon-twitter"></a>
+						<li class="tool" title="Twitter"><a href="https://twitter.com/figura_4" class="icon-twitter"></a>
 						</li>
-						<li class="tool" title="Pinterest"><a href="#"
-							class="icon-pinterest"></a></li>
-						<li class="tool" title="GitHub"><a href="#" class="icon-github"></a>
+						<li class="tool" title="GitHub"><a href="https://github.com/figura4" class="icon-github"></a>
 						</li>
-						<li class="tool" title="LinkedIn"><a href="#" class="icon-linkedin"></a>
+						<li class="tool" title="LinkedIn"><a href="http://it.linkedin.com/pub/oscar-riva/3/228/5a2/" class="icon-linkedin"></a>
 						</li>
 					</ul>
 				</div>
