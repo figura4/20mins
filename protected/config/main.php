@@ -88,6 +88,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'siteDescription'=>'Viaggio nel mondo della letteratura e cinematografia fantastica. Fantascienza, fantasy, romanzi, film, serie tv. Recensioni e note biografiche sugli autori.',
 		'authorPicsPath'=>'/images/authors/',
 		'imagesPath' => '/images/images/',
 		'coversPath' => '/images/covers/',

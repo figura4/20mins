@@ -3,9 +3,9 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Subtraction | HTML Theme</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<meta name="description" content="<?php echo Yii::app()->params['siteDescription']; ?>">
+	<meta name="author" content="Oscar Riva">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
