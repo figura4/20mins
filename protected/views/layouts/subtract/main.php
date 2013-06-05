@@ -21,13 +21,7 @@
 				
 		<!-- Main Content
 		================================================== -->
-		<div class="container">
-			<?php echo $content; ?>
-			
-			<!--Sidebar-->
-			<?php $this->renderPartial('//layouts/subtract/_sidebar'); ?>
-			<div class="bottom"></div>
-		</div>
+		<?php echo $content; ?>
 		
 		<!-- Footer
 		================================================== -->
