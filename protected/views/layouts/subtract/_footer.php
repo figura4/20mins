@@ -28,9 +28,6 @@
 						<i class="icon-envelope-alt contact"></i><a href="mailto:staff@20mins.it">staff@20mins.it</a>
 					</p>
 					<p>
-						<i class="icon-globe contact"></i><a href="http://www.anobii.com/figura4booklist/books">http://www.anobii.com/figura4booklist/books</a>
-					</p>
-					<p>
 						<i class="icon-globe contact"></i><a href="http://bitgrabbers.com">http://bitgrabbers.com</a>
 					</p>
 					<p>
@@ -49,6 +46,10 @@
 						<li class="tool" title="Facebook"><a href="https://www.facebook.com/oscar.riva" class="icon-facebook"></a>
 						</li>
 						<li class="tool" title="Twitter"><a href="https://twitter.com/figura_4" class="icon-twitter"></a>
+						</li>
+						<li class="tool" title="Anobii"><a href="http://www.anobii.com/figura4booklist/books" class="icon-book"></a>
+						</li>
+						<li class="tool" title="Letterboxd"><a href="http://letterboxd.com/figura4/" class="icon-film"></a>
 						</li>
 						<li class="tool" title="GitHub"><a href="https://github.com/figura4" class="icon-github"></a>
 						</li>

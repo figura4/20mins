@@ -2,7 +2,7 @@
 
 class SiteController extends Controller
 {
-	public $layout='//layouts/admin/column2';
+	public $layout='//layouts/subtract/column2';
 	
 	/**
 	 * Declares class-based actions.
@@ -31,7 +31,6 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->layout = '//layouts/subtract/column2';
 		$this->render('index');
 	}
 
