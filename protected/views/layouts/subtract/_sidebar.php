@@ -14,118 +14,19 @@
 						</blockquote>
 					</div>
 					
-					<div id="toggle">
-						<div class="widget">
-							<div class="lined-header">
-								<h3><span>Fantascienza <i class="icon-reorder"></i></span></h3>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id. <br><a href="#" class="icon-circle-arrow-right"> Vai alle recensioni</a></p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-													
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Hard Sci-Fi</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Cyberpunk</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="widget">
-							<div class="lined-header">
-								<h3><span>Fantasy <i class="icon-reorder"></i></span></h3>
-							</div>
-						
-							<div class="toggle">
-								<h5>New Weird</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-							
-							<div class="toggle">
-								<h5>Heroic</h5>
-								<div class="content">
-									<p>Quisque et risus sapien. Quisque nibh magna, facilisis in interdum nec, pellentesque quis metus. Nam rhoncus diam ut lorem commodo egestas. Praesent bibendum elit et purus posuere vehicula. Nam bibendum elementum erat, non pharetra turpis scelerisque id.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
 					<div class="widget">
-						<div class="lined-header">
-							<h3><span>Fantascienza <i class="icon-list-ul"></i></span></h3>
+						<h5>Twitter</h5>
+						<div class="twitter-container">
+							<i class="icon-twitter"></i>
+							<div class="tweet"></div>
+							<div class="clearfix"></div>
 						</div>
-						<ul class="file">
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-						</ul>
-					</div>
-					
-					<div class="widget">
-						<div class="lined-header">
-							<h3><span>Fantasy <i class="icon-list-ul"></i></span></h3>
+						<div class="twitter-follow">
+							<a href="https://twitter.com/figura_4"
+								class="twitter-follow-button" data-show-count="false"
+								data-lang="en">Follow @figura_4</a>
 						</div>
-						<ul class="file">
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-							<li><a href="#">Unordered list item</a></li>
-						</ul>
-					</div>
+					</div>	
 					
 					<div class="widget">
 						<h5>Featured Post</h5>
@@ -144,6 +45,8 @@
 						<h5>Text Widget</h5>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at lacinia purus. Donec ac mauris et lacus pulvinar pulvinar eu in dui. Cras lacinia ultricies elit, commodo fermentum lacus euismod eget.</p>
 					</div>
+					
+				
 					
 				</div>
 			</aside>
