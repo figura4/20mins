@@ -41,6 +41,19 @@ return array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
 			'rules'=>array(
+				'recensioni/libri'=>'review/list',
+				'recensioni/libri/<id:\d+>/<title:\w+>'=>'review/view',
+				'recensioni/tv'=>'review/list',
+				'recensioni/tv/<id:\d+>/<title:\w+>'=>'review/view',
+				'recensioni/film'=>'review/list',
+				'recensioni/film/<id:\d+>/<title:\w+>'=>'review/view',
+				'recensioni/categorie'=>'tag/list',
+				'recensioni/categorie/<id:\d+>/<tag:\w+>'=>'tag/view',
+				'post'=>'content/list',
+				'post/<id:\d+>/<title:\w+>'=>'content/view',
+				'login'=>'site/login',
+				'rss'=>'feed/rss',
+				'sitemap'=>'feed/sitemap',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -52,6 +65,7 @@ return array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		*/
+		
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;unix_socket=/var/run/mysqld/mysqld.sock;dbname=20mins',
