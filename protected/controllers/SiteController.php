@@ -29,9 +29,20 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$criteria=new CDbCriteria();
+		$count=Content::model()->count($criteria);
+		$pages=new CPagination($count);
+		
+		// results per page
+		$pages->setPageSize(Yii::app()->params['pageSize']);
+		$pages->applyLimit($criteria);
+		$contents=Content::model()->findAll($criteria);
+		
+		$this->render('index', array(
+	        'pages'=>$pages,
+			'contents'=>$contents,
+	    ));
+				
 	}
 
 	/**

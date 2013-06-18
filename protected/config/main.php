@@ -17,6 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.extensions.CAdvancedArBehavior',
+		'application.extensions.CustomPager',
 	),
 
 	'modules'=>array(
@@ -94,10 +95,10 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				array(
+				/*array(
 						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
 						'ipFilters'=>array('127.0.0.1','192.168.56.1'),
-				),
+				),*/
 			),
 		),
 	),
@@ -112,5 +113,6 @@ return array(
 		'imagesPath' => '/images/images/',
 		'coversPath' => '/images/covers/',
 		'avatarsPath' => '/images/avatars/',
+		'pageSize' => 5,
 	),
 );

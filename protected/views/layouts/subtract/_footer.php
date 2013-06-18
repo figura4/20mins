@@ -6,6 +6,8 @@
 					    cuoco per diletto, origamista per vocazione<br>
 					    appassionato del fantastico in tutte le sue forme</p>
 				</div>
+				
+				<!-- 
 				<div class="one-third column">
 					<h5>Twitter</h5>
 					<div class="twitter-container">
@@ -19,6 +21,8 @@
 							data-lang="en">Follow @figura_4</a>
 					</div>
 				</div>
+				 -->
+
 				<div class="one-third column">
 					<h5>Contatti</h5>
 					<p>
