@@ -9,6 +9,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'content-form',
 	'enableAjaxValidation'=>true,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -29,6 +30,18 @@
 		<?php echo $form->labelEx($model,'body'); ?>
 		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'body')); ?>
 		<?php echo $form->error($model,'body'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'cover'); ?>
+		<?php echo $form->textField($model,'cover',array('size'=>50,'maxlength'=>50,'readonly'=>'true','disabled'=>'true')); ?>
+		<?php echo $form->error($model,'cover'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'uploadedCover'); ?>
+		<?php echo $form->fileField($model,'uploadedCover'); ?>
+		<?php echo $form->error($model,'uploadedCover'); ?>
 	</div>
 	
 	<div class="row">

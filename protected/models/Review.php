@@ -40,7 +40,7 @@
  */
 class Review extends Content
 {
-	public $uploadedCover;
+	//public $uploadedCover;
 	
 	static function model($className=__CLASS__) {
 		return parent::model($className);
@@ -135,10 +135,6 @@ class Review extends Content
 	public function beforeSave(){
 		if(parent::beforeSave()) {
 			$this->page_title = $this->full_title;
-			
-			if (is_object($this->uploadedCover) && get_class($this->uploadedCover)==='CUploadedFile')
-				$this->cover = $this->uploadedCover->getName();
-			
 			return true;
 		}
 		return false;
@@ -155,4 +151,25 @@ class Review extends Content
 	
 		return parent::afterSave();
 	}
+	
+	public function getCategory()
+    {	
+    	switch ($this->type) {
+    		case 'tv':
+    			$category = 'serie tv';
+    			break;
+    		
+    		case 'book':
+    			$category = 'libro';
+    			break;
+    			
+    		case 'movie':
+    			$category = 'film';
+    			break;
+    			
+    		default:
+    			$category = '';
+    	}
+    	return "Recensione $category";
+    }
 }

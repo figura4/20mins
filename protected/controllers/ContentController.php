@@ -70,6 +70,7 @@ class ContentController extends Controller
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
+			$model->uploadedCover = CUploadedFile::getInstance($model, 'uploadedCover');
 			if($model->save())
 				$this->redirect(array('admin','id'=>$model->id));
 		}
@@ -94,6 +95,7 @@ class ContentController extends Controller
 		if(isset($_POST['Content']))
 		{
 			$model->attributes=$_POST['Content'];
+			$model->uploadedCover = CUploadedFile::getInstance($model, 'uploadedCover');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

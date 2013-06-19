@@ -30,6 +30,8 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria();
+		$criteria->order = 'pub_date DESC';
+		$criteria->condition = 'published = 1 and pub_date <= NOW()';
 		$count=Content::model()->count($criteria);
 		$pages=new CPagination($count);
 		

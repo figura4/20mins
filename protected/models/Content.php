@@ -19,6 +19,7 @@
  */
 class Content extends CActiveRecord
 {
+	public $uploadedCover;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -49,6 +50,7 @@ class Content extends CActiveRecord
 			array('page_title, published, type, body, pub_date', 'required'),
 			array('user_id, published, vote', 'numerical', 'integerOnly'=>true),
 			array('picture1, picture2, picture3', 'length', 'max'=>100),
+			array('uploadedCover', 'file', 'types'=>'jpg, jpeg, gif, png', 'allowEmpty'=>true, 'safe'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, page_title, user_id, published, type, body, pub_date, created_on, updated_on', 'safe', 'on'=>'search'),
@@ -82,6 +84,7 @@ class Content extends CActiveRecord
 			'published' => 'Published',
 			'type' => 'Type',
 			'body' => 'Body',
+			'cover' => 'Cover',
 			'picture1' => 'Picture1',
 			'picture2' => 'Picture2',
 			'picture3' => 'Picture3',
@@ -108,6 +111,7 @@ class Content extends CActiveRecord
 		$criteria->compare('published',$this->published);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('body',$this->body,true);
+		$criteria->compare('cover',$this->cover,true);
 		$criteria->compare('pub_date',$this->pub_date,true);
 		$criteria->compare('created_on',$this->created_on,true);
 		$criteria->compare('updated_on',$this->updated_on,true);
@@ -137,11 +141,13 @@ class Content extends CActiveRecord
 		return $model;
 	}
 	
+	/* @TODO removed to allow reviews on home page
 	function defaultScope(){
 		return array(
 			'condition'=>"type='content'",
 		);
 	}
+	*/
 	
 	protected function beforeSave()
 	{
@@ -152,8 +158,13 @@ class Content extends CActiveRecord
 				$this->updated_on = new CDbExpression('NOW()');
 			
 			$this->user_id = 1;
+		
+			if (is_object($this->uploadedCover) && get_class($this->uploadedCover)==='CUploadedFile')
+				$this->cover = $this->uploadedCover->getName();
+		
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -189,5 +200,10 @@ class Content extends CActiveRecord
     		$text = '<p>' . $text . ' ' . $trailing . '</p>';
     	}
     	return $text;
+    }
+    
+    public function getCategory()
+    {
+    	return 'Blog';
     }
 }
