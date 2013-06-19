@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content_id'); ?>
-		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Review::model()->findAll(array('order' => 'original_title')), 'id', 'original_title'), array('empty'=>'- select review')); ?>
+		<?php echo $form->dropDownList($model,'content_id', CHtml::listData(Content::model()->findAll(array('order' => 'page_title')), 'id', 'page_title'), array('empty'=>'- select content')); ?>
 		<?php echo $form->error($model,'content_id'); ?>
 	</div>
 

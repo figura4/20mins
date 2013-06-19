@@ -40,7 +40,7 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('body, author, email, content_id, created_on, updated_on', 'required'),
+			array('body, author, email, content_id', 'required'),
 			array('content_id', 'numerical', 'integerOnly'=>true),
 			array('author', 'length', 'max'=>50),
 			array('email', 'length', 'max'=>80),
@@ -100,5 +100,18 @@ class Comment extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	protected function beforeSave()
+	{
+		if(parent::beforeSave()) {
+			if ($this->isNewRecord)
+				$this->created_on = new CDbExpression('NOW()');
+			else
+				$this->updated_on = new CDbExpression('NOW()');
+			return true;
+		}
+	
+		return false;
 	}
 }

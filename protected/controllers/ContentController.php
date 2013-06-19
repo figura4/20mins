@@ -51,6 +51,7 @@ class ContentController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->layout='//layouts/subtract/column2';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
