@@ -174,7 +174,7 @@ class Content extends CActiveRecord
     
     public function getCoverUrl()
     {
-    	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default_cover.jpg' : $this->cover);
+    	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default.jpg' : $this->cover);
     }
     
     public function getTeaser($chars, $trailing = '') 
