@@ -176,4 +176,18 @@ class Content extends CActiveRecord
     {
     	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default_cover.jpg' : $this->cover);
     }
+    
+    public function getTeaser($chars, $trailing = '') 
+    {
+    	$text = $this->body;
+    	if (strlen($this->body) > $chars) {
+    		$text = strip_tags($this->body);
+    		$text = substr($text, 0, $chars);
+    		$text = substr($text, 0, strrpos($text," "));
+    		$text = str_replace('<p>', '', $text);
+    		$text = str_replace('</p>', '', $text);
+    		$text = '<p>' . $text . ' ' . $trailing . '</p>';
+    	}
+    	return $text;
+    }
 }

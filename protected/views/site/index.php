@@ -29,8 +29,8 @@
 									<li><i class="icon-comments"></i> Commenti: <span><a href="javascript:void(0)"><?php echo count($content->comments); ?></a></span></li>
 								</ul>
 						</div>
-						<h3><a href="#"><?php echo $content->page_title; ?></a></h3>
-						<?php echo $content->body; ?>
+						<h3><?php echo CHtml::link($content->page_title, Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle()))); ?></h3>
+						<?php echo $content->getTeaser(200); ?>
 						<?php echo CHtml::link('Leggi tutto', Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle())), array('class'=>'button')); ?>
 					</div>
 					<div class="clearfix"></div>
