@@ -60,17 +60,20 @@
 						<div id="comment-form_es_" class="errorSummary" style="display:none"><p>Please fix the following input errors:</p>
 						<ul><li>dummy</li></ul></div>
 						<div class="input-box">
-							<label for="name">Nome</label>
-							<input type="text" name="name" value="" id="name" required/>
+							<label for="Comment_author" class="required">Nome <span class="required">*</span></label>		
+							<input size="50" maxlength="50" name="Comment[author]" id="Comment_author" type="text" />
+							<div class="errorMessage" id="Comment_author_em_" style="display:none"></div>
 						</div>
 						<div class="input-box">
-							<label for="email">Email</label>
-							<input type="email" name="email" value="" id="email" required/>
+							<label for="Comment_email" class="required">Email <span class="required">*</span></label>
+							<input size="60" maxlength="80" name="Comment[email]" id="Comment_email" type="text" />	
+							<div class="errorMessage" id="Comment_email_em_" style="display:none"></div>
 						</div>
 						<div class="clearfix"></div>
 						<div class="input-box area">
-							<label for="comment">Commento</label>
-							<textarea name="comment" rows="12" required></textarea>
+							<label for="Comment_body" class="required">Commento <span class="required">*</span></label>		
+							<textarea rows="6" cols="50" name="Comment[body]" id="Comment_body"></textarea>		
+							<div class="errorMessage" id="Comment_body_em_" style="display:none"></div>
 						</div>
 						<div class="clearfix"></div>
 						<input type="submit" class="button" value="Send" />
