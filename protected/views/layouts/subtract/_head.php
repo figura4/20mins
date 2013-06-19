@@ -14,11 +14,11 @@
 	<!-- CSS
   ================================================== -->
     <?php // @TODO Big problem with rel paths using apache subfolder!  ?>
-	<link rel="stylesheet" href="css/subtract/stylesheets/screen.css">
-	<link rel="stylesheet" href="css/subtract/stylesheets/jquery.fancybox-1.3.4.css">
-	<link rel="stylesheet" href="css/subtract/icon_fonts.css">
-	<link rel="stylesheet" href="css/subtract/flexslider.css">
-	<!--[if IE ]><link rel="stylesheet" href="css/ie.css"><!--<![endif]-->
+	<link rel="stylesheet" href="/20mins/css/subtract/stylesheets/screen.css">
+	<link rel="stylesheet" href="/20mins/css/subtract/stylesheets/jquery.fancybox-1.3.4.css">
+	<link rel="stylesheet" href="/20mins/css/subtract/icon_fonts.css">
+	<link rel="stylesheet" href="/20mins/css/subtract/flexslider.css">
+	<!--[if IE ]><link rel="stylesheet" href="/css/ie.css"><!--<![endif]-->
 	
 	
 	<!-- Google Fonts
