@@ -162,4 +162,18 @@ class Content extends CActiveRecord
 		return array( 'CAdvancedArBehavior' => array(
 				'class' => 'application.extensions.CAdvancedArBehavior'));
 	}
+	
+	public function urlifyTitle() 
+	{
+    	$result = $this->page_title;
+    	$result = strtolower($result);
+    	$result = preg_replace('/[^\w\d_ ]/si', '', $result);
+    	$result = preg_replace('/\s+/', '-', $result);
+    	return $result;
+    }
+    
+    public function getCoverUrl()
+    {
+    	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default_cover.jpg' : $this->cover);
+    }
 }
