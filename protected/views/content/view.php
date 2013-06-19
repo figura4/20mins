@@ -44,8 +44,8 @@
 								<div class="comment">
 									<h6><?php echo $comment->author; ?></h6>
 									<p><?php echo $comment->body; ?></p>
-									<div class="date">at 7:30pm on December 23rd, 2012</div>
-									<a href="#" class="button right">Reply</a>
+									<div class="date">at <?php echo date('G:ma', strtotime($model->created_on)) ?> on <?php echo date('F jS, Y', strtotime($model->created_on)) ?></div>
+									<!-- <a href="#" class="button right">Reply</a>  -->
 								</div>
 							</li>
 						<?php } ?>
@@ -55,23 +55,21 @@
 				
 				<!-- Form -->
 				<div class="comment-form">
-					<h5>Leave a Comment</h5>
-					<form action="#">
+					<h5>Lascia un Commento</h5>
+					<form id="comment-form" action="/20mins/comment/create" method="post">
+						<div id="comment-form_es_" class="errorSummary" style="display:none"><p>Please fix the following input errors:</p>
+						<ul><li>dummy</li></ul></div>
 						<div class="input-box">
-							<label for="name">Name</label>
+							<label for="name">Nome</label>
 							<input type="text" name="name" value="" id="name" required/>
 						</div>
 						<div class="input-box">
 							<label for="email">Email</label>
 							<input type="email" name="email" value="" id="email" required/>
 						</div>
-						<div class="input-box">
-							<label for="email">URL</label>
-							<input type="text" name="url" value="" id="url"/>
-						</div>
 						<div class="clearfix"></div>
 						<div class="input-box area">
-							<label for="comment">Comment</label>
+							<label for="comment">Commento</label>
 							<textarea name="comment" rows="12" required></textarea>
 						</div>
 						<div class="clearfix"></div>
