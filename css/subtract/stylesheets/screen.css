@@ -57,7 +57,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1;
   color: #555;
-  background: url(../../../images/subtract/noise_lines.png);
+  background: url(../../img/noise_lines.png);
 }
 
 ol, ul {
@@ -185,7 +185,7 @@ h1#title {
 }
 
 .page-header {
-  background: url(../../../images/subtract/broken_noise.png);
+  background: url(../../img/broken_noise.png);
   padding: 35px 0;
   border-bottom: 5px solid #8fba3b;
   margin-bottom: 55px;
@@ -218,7 +218,7 @@ h1#title {
 }
 
 .lined-header h3:before, .lined-header h3:after {
-  background: url(../../../images/subtract/header-line.png) no-repeat 0 50%;
+  background: url(../../img/header-line.png) no-repeat 0 50%;
   content: '';
   width: 50%;
   display: table-cell;
@@ -600,7 +600,7 @@ nav#filter ul li:first-child:before {
 .slider-cont {
   width: 100%;
   padding: 50px 0;
-  background: url(../../../images/subtract/broken_noise.png);
+  background: url(../../img/broken_noise.png);
 }
 
 .flex-container {
@@ -703,7 +703,7 @@ nav#filter ul li:first-child:before {
 }
 
 .loader {
-  background: black url(../../../images/subtract/325.gif) no-repeat 50% 50%;
+  background: black url(../../img/325.gif) no-repeat 50% 50%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1268,41 +1268,33 @@ input[type="submit"].alt:hover {
   margin-bottom: 10px;
   display: none;
 }
-
 .alert.standard {
   background-color: #60b8d6;
 }
-
 .alert.standard:before {
   font-family: "FontAwesome";
   content: "\f05a";
   margin-right: 15px;
 }
-
 .alert.success {
   background-color: #4abf7b;
 }
-
 .alert.success:before {
   font-family: "FontAwesome";
   content: "\f087";
   margin-right: 15px;
 }
-
 .alert.error {
   background-color: #ef4343;
 }
-
 .alert.error:before {
   font-family: "FontAwesome";
   content: "\f071";
   margin-right: 15px;
 }
-
 .alert.secondary {
   background-color: #f4dd66;
 }
-
 .alert.secondary:before {
   font-family: "FontAwesome";
   content: "\f05a";
@@ -2046,7 +2038,7 @@ label[for=background], select#background {
   #wrap {
     width: 100%;
   }
-
+  
   .boxed {
     width: 100% !important;
     margin: 0 !important;
