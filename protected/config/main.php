@@ -96,10 +96,10 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				array(
+				/*array(
 						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
 						'ipFilters'=>array('127.0.0.1','192.168.56.1'),
-				),
+				),*/
 			),
 		),
 	),

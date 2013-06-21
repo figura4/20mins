@@ -56,38 +56,11 @@
 				<!-- Form -->
 				<?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
         			<div class="comment-form">
-            			<h5 class="alert success"><?php echo Yii::app()->user->getFlash('commentSubmitted'); ?></h5>
+            			<h5><?php echo Yii::app()->user->getFlash('commentSubmitted'); ?></h5>
         			</div>
     			<?php else: ?>
 					<?php echo $this->renderPartial('_commentForm', array('comment'=>$comment)); ?>
 				<?php endif; ?>
 				<!-- End Form -->
-				
-				<!-- Form 
-				<div class="comment-form">
-					<h5>Lascia un Commento</h5>
-					<form id="comment-form" action="<?php echo Yii::app()->createUrl('comment/create', array('contentId' => $model->id)); ?>" method="post">
-						<div id="comment-form_es_" class="errorSummary" style="display:none"><p>Please fix the following input errors:</p>
-						<ul><li>dummy</li></ul></div>
-						<div class="input-box">
-							<label for="Comment_author" class="required">Nome <span class="required">*</span></label>		
-							<input size="50" maxlength="50" name="Comment[author]" id="Comment_author" type="text" />
-							<div class="errorMessage" id="Comment_author_em_" style="display:none"></div>
-						</div>
-						<div class="input-box">
-							<label for="Comment_email" class="required">Email <span class="required">*</span></label>
-							<input size="60" maxlength="80" name="Comment[email]" id="Comment_email" type="text" />	
-							<div class="errorMessage" id="Comment_email_em_" style="display:none"></div>
-						</div>
-						<div class="clearfix"></div>
-						<div class="input-box area">
-							<label for="Comment_body" class="required">Commento <span class="required">*</span></label>		
-							<textarea rows="6" cols="50" name="Comment[body]" id="Comment_body"></textarea>		
-							<div class="errorMessage" id="Comment_body_em_" style="display:none"></div>
-						</div>
-						<div class="clearfix"></div>
-						<input type="submit" class="button" value="Send" />
-					</form>
-				</div>
-				<!-- End Form -->
+
 			</div>
