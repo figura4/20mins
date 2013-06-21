@@ -56,7 +56,7 @@
 				<!-- Form -->
 				<div class="comment-form">
 					<h5>Lascia un Commento</h5>
-					<form id="comment-form" action="/20mins/comment/create" method="post">
+					<form id="comment-form" action="<?php echo Yii::app()->createUrl('comment/create', array('contentId' => $model->id)); ?>" method="post">
 						<div id="comment-form_es_" class="errorSummary" style="display:none"><p>Please fix the following input errors:</p>
 						<ul><li>dummy</li></ul></div>
 						<div class="input-box">

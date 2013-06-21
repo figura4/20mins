@@ -36,8 +36,8 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		
 		// uncomment the following to enable URLs in path-format
-
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
@@ -50,6 +50,7 @@ return array(
 				'recensioni/film/<id:\d+>/<title:.*?>'=>'review/view',
 				'recensioni/categorie'=>'tag/list', // @TODO create a page with tag list?
 				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'tag/view', // @todo create page listing reviews tagged with a defined tag
+				'comment/create/<contentId:\d+>'=>'comment/create', 
 				'post'=>'content/list', // @TODO create posts list page (blog home page?)
 				'post/<id:\d+>/<title:.*?>'=>'content/view',
 				'search'=>'site/search', // @TODO implement website search
@@ -89,16 +90,16 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, trace, info',
 				),
 				// uncomment the following to show log messages on web pages
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				/*array(
+				array(
 						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
 						'ipFilters'=>array('127.0.0.1','192.168.56.1'),
-				),*/
+				),
 			),
 		),
 	),

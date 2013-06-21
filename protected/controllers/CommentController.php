@@ -28,7 +28,7 @@ class CommentController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -60,23 +60,22 @@ class CommentController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($contentId)
 	{
 		$model=new Comment;
+		$content=Content::model()->findByPk($contentId);
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-
+		Yii::log('$contentId: ' . $content->id, 'info', 'info');
+		Yii::trace('$contentId: ' . $content->id, 'info');
 		if(isset($_POST['Comment']))
 		{
 			$model->attributes=$_POST['Comment'];
+			$model->content_id = $contentId;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect($content->getUrl());
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
 	}
 
 	/**

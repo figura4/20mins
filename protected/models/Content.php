@@ -183,6 +183,13 @@ class Content extends CActiveRecord
     	return $result;
     }
     
+    public function getUrl() {
+    	if ($this->type == 'content')
+    		return Yii::app()->createUrl('content/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    	else
+    		return Yii::app()->createUrl('review/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    }
+    
     public function getCoverUrl()
     {
     	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default.jpg' : $this->cover);
