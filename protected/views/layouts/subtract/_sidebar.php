@@ -13,7 +13,8 @@
 						commodo fermentum lacus euismod eget.
 						</blockquote>
 					</div>
-
+					
+					<!-- 
 					<div class="widget">
 						<h5>Twitter</h5>
 						<div class="twitter-container">
@@ -27,6 +28,7 @@
 								data-lang="en">Follow @figura_4</a>
 						</div>
 					</div>	
+					 -->
 
 					<div class="widget">
 						<h5>Featured Post</h5>

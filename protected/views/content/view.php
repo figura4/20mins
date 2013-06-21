@@ -54,6 +54,16 @@
 				<!-- End Comments -->
 				
 				<!-- Form -->
+				<?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
+        			<div class="comment-form">
+            			<h5 class="alert success"><?php echo Yii::app()->user->getFlash('commentSubmitted'); ?></h5>
+        			</div>
+    			<?php else: ?>
+					<?php echo $this->renderPartial('_commentForm', array('comment'=>$comment)); ?>
+				<?php endif; ?>
+				<!-- End Form -->
+				
+				<!-- Form 
 				<div class="comment-form">
 					<h5>Lascia un Commento</h5>
 					<form id="comment-form" action="<?php echo Yii::app()->createUrl('comment/create', array('contentId' => $model->id)); ?>" method="post">

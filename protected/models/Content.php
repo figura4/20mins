@@ -149,6 +149,12 @@ class Content extends CActiveRecord
 	}
 	*/
 	
+	public function addComment($comment)
+	{
+		$comment->content_id=$this->id;
+		return $comment->save();
+	}
+	
 	protected function beforeSave()
 	{
 		if(parent::beforeSave()) {

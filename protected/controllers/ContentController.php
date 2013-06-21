@@ -52,8 +52,12 @@ class ContentController extends Controller
 	public function actionView($id)
 	{
 		$this->layout='//layouts/subtract/column2';
+		$model=$this->loadModel($id);
+    	$comment=$this->newComment($model);
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'comment'=>$comment,
 		));
 	}
 
@@ -196,5 +200,27 @@ class ContentController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	protected function newComment($post)
+	{
+		$comment=new Comment;
+		
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		{
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+		
+		if(isset($_POST['Comment']))
+		{
+			$comment->attributes=$_POST['Comment'];
+			if($post->addComment($comment))
+			{
+				Yii::app()->user->setFlash('commentSubmitted','Il tuo commento &egrave; stato inviato correttamente. Grazie :-)');
+				$this->refresh();
+			}
+		}
+		return $comment;
 	}
 }

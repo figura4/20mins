@@ -62,13 +62,13 @@ class CommentController extends Controller
 	 */
 	public function actionCreate($contentId)
 	{
+		$this->layout='//layouts/subtract/column2';
 		$model=new Comment;
 		$content=Content::model()->findByPk($contentId);
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
-		Yii::log('$contentId: ' . $content->id, 'info', 'info');
-		Yii::trace('$contentId: ' . $content->id, 'info');
+		$this->performAjaxValidation($content);
+
 		if(isset($_POST['Comment']))
 		{
 			$model->attributes=$_POST['Comment'];
@@ -76,6 +76,10 @@ class CommentController extends Controller
 			if($model->save())
 				$this->redirect($content->getUrl());
 		}
+		
+		$this->render('../content/view',array(
+				'model'=>$content,
+		));
 	}
 
 	/**
