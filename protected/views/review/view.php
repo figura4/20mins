@@ -32,7 +32,7 @@
 						<?php echo $model->body;?>
 						<div class="author-info">
 							<h5>L'autore / <?php echo $model->author->getFullName(false); ?></h5>
-							<img src="/20mins/images/authors/default.png" class="tool" alt="" title="Hey!" />
+							<img src="/20mins/images/authors/default.png" class="tool" alt="<?php echo $model->author->getFullName(false); ?>" title="Si, questo &egrave; <?php echo $model->author->getFullName(false); ?>" />
 							<?php echo $model->author->bio; ?>
 						</div>
 					</div>

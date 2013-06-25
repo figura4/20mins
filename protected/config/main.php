@@ -108,7 +108,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'staff@20mins.it',
 		'siteDescription'=>'Viaggio nel mondo della letteratura e cinematografia fantastica. Fantascienza, fantasy, romanzi, film, serie tv. Recensioni e note biografiche sugli autori.',
 		'authorPicsPath'=>'/images/authors/',
 		'imagesPath' => '/images/images/',

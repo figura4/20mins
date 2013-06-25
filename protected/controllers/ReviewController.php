@@ -28,7 +28,7 @@ class ReviewController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'list'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -110,6 +110,36 @@ class ReviewController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+	}
+	
+	/**
+	 * Get a list of review accordig to parameters.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param string $type the type of reviews to look for
+	 * @param string $tag the tag of the reviews to look for
+	 * @param string $vote the vote of the reviews to look for
+	 * @param string $order the order to display the reviews
+	 * @param int $author ID of the author associated to the reviews to display
+	 */
+	public function actionList($type='bookReview', $tag=1, $author=1, $vote=9, $order='original_title')
+	{
+		$this->layout='//layouts/subtract/column2';
+
+		$dataProvider=new CActiveDataProvider('Review', array(
+				'criteria'=>array(
+						'condition'=>'published=1 and pub_date<=NOW()',
+						//'order'=>"$order DESC",
+						'with'=>array('author'),
+				),
+				'pagination'=>array(
+						'pageSize'=>50,
+				),
+		));
+		
+		$this->render('list',array(
+				'dataProvider'=>$dataProvider,
+		));
+		
 	}
 	
 	/**
