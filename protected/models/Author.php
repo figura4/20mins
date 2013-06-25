@@ -109,9 +109,12 @@ class Author extends CActiveRecord
 		));
 	}
 	
-	public function getFull_name()
+	public function getFullName($forOrdering =  true)
 	{
-		return $this->last_name . ", " . $this->first_name;
+		if ($forOrdering)
+			return ucfirst($this->last_name) . ", " . ucfirst($this->first_name);
+		
+		return ucfirst($this->first_name) . " " . ucfirst($this->last_name); 
 	}
 	
 	public function beforeSave(){

@@ -23,6 +23,6 @@
             			<h5><?php echo Yii::app()->user->getFlash('commentSubmitted'); ?></h5>
         			</div>
     			<?php else: ?>
-					<?php echo $this->renderPartial('_commentForm', array('comment'=>$comment)); ?>
+					<?php echo $this->renderPartial('../content/_commentForm', array('comment'=>$comment)); ?>
 				<?php endif; ?>
 				<!-- End Form -->
