@@ -121,13 +121,21 @@ class ReviewController extends Controller
 	 * @param string $order the order to display the reviews
 	 * @param int $author ID of the author associated to the reviews to display
 	 */
-	public function actionList($type='bookReview', $tag=1, $author=1, $vote=9, $order='original_title')
+	public function actionList($type='movie', $tag=null, $author=null, $vote=null, $order='original_title')
 	{
 		$this->layout='//layouts/subtract/column2';
-
+		
+		$condition = 'published=1 and pub_date<=NOW()';
+		if (in_array($type, array('book', 'tv', 'movie')))
+			$condition.=' and type=\'' . $type.'\'';
+		if (is_numeric($author))
+			$condition.=' and author_id='.$author;
+		if (is_numeric($vote))
+			$condition.=' and vote='.$vote;
+		
 		$dataProvider=new CActiveDataProvider('Review', array(
 				'criteria'=>array(
-						'condition'=>'published=1 and pub_date<=NOW()',
+						'condition'=>$condition,
 						//'order'=>"$order DESC",
 						'with'=>array('author'),
 				),
@@ -139,7 +147,6 @@ class ReviewController extends Controller
 		$this->render('list',array(
 				'dataProvider'=>$dataProvider,
 		));
-		
 	}
 	
 	/**

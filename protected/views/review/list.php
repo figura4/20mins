@@ -3,6 +3,7 @@
 	
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 	    'dataProvider'=>$dataProvider,
+		'cssFile' => '/20mins/css/subtract/tables/tables.css',
 	    'columns'=>array(
 	        'original_title',         
 	    	array(            
