@@ -121,7 +121,7 @@ class ReviewController extends Controller
 	 * @param string $order the order to display the reviews
 	 * @param int $author ID of the author associated to the reviews to display
 	 */
-	public function actionList($type='movie', $tag=null, $author=null, $vote=null, $order='original_title')
+	public function actionList($type=null, $tag=null, $author=null, $vote=null, $order='vote DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
 		
@@ -136,12 +136,14 @@ class ReviewController extends Controller
 		$dataProvider=new CActiveDataProvider('Review', array(
 				'criteria'=>array(
 						'condition'=>$condition,
-						//'order'=>"$order DESC",
 						'with'=>array('author'),
 				),
 				'pagination'=>array(
 						'pageSize'=>50,
 				),
+				'sort'=>array(
+						'defaultOrder'=>"$order DESC",
+				)
 		));
 		
 		$this->render('list',array(
