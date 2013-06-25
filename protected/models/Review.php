@@ -105,7 +105,7 @@ class Review extends Content
 			'picture3' => 'Picture3',
 			'italian_title' => 'Italian Title',
 			'italian_subtitle' => 'Italian Subtitle',
-			'original_title' => 'Original Title',
+			'original_title' => 'Titolo Originale',
 			'original_subtitle' => 'Original Subtitle',
 			'year' => 'Year',
 			'vote' => 'Vote',
@@ -130,6 +130,37 @@ class Review extends Content
 	public function getFull_title() 
 	{
 		return (empty($this->italian_title)) ? $this->original_title : $this->italian_title;
+	}
+	
+	public function getHtmlVote()
+	{
+		$htmlVote='';
+		for ($i=1; $i<=$this->vote/2; $i++) {
+			$htmlVote .= '<i class="icon-star" style="color:#8fba3b;"></i>';
+		}
+		if ($this->vote%2 <> 0)
+			$htmlVote .= '<i class="icon-star-half" style="color:#8fba3b;"></i>';
+		return $htmlVote;
+	}
+	
+	public function getHtmlType()
+	{
+		switch($this->type) {	
+			case 'book': 
+				return '<i class="icon-book" style="color:#8fba3b;"></i>';
+				break;
+						
+			case 'movie': 
+				return '<i class="icon-film" style="color:#8fba3b;"></i>';
+				break;
+				
+			case 'tv':
+				return '<i class="icon-desktop" style="color:#8fba3b;"></i>';
+				break;
+						
+			default:
+				return '<i class="icon-question-sign" style="color:#8fba3b;"></i>';
+		}
 	}
 	
 	public function beforeSave(){

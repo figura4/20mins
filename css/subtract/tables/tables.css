@@ -26,7 +26,8 @@
 .grid-view table.items th
 {
 	color: white;
-	background: url("bg.gif") repeat-x scroll left top white;
+	/*background: url("bg.gif") repeat-x scroll left top white;*/
+	background: #8fba3b;
 	text-align: center;
 }
 
@@ -61,7 +62,8 @@
 
 .grid-view table.items tr.odd
 {
-	background: #E5F1F4;
+	/*background: #E5F1F4;*/
+	background: #E5E6E3;
 }
 
 .grid-view table.items tr.selected
