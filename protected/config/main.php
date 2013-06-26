@@ -20,6 +20,7 @@ return array(
 		'application.extensions.CAdvancedArBehavior',
 		'application.extensions.CustomPager',
 		'application.extensions.feed.*',
+		'application.extensions.sitemap.*',
 	),
 
 	'modules'=>array(
@@ -59,8 +60,9 @@ return array(
 				'search'=>'site/search', // @TODO implement website search
 				'admin'=>'site/admin', // @TODO create initial admin page
 				'login'=>'site/login',
-				'rss'=>'feed/rss', // @TODO rss feed
-				'sitemap'=>'feed/sitemap', // @TODO xml sitemap
+				'rss'=>'feed/rss',
+				'sitemap'=>'feed/sitemapxml', // @TODO xml sitemap
+				'sitemap.xml'=>'feed/sitemapxml',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -96,9 +98,9 @@ return array(
 					'levels'=>'error, warning, trace, info',
 				),
 				// uncomment the following to show log messages on web pages
-				array(
-					'class'=>'CWebLogRoute',
-				),
+				//array(
+				//	'class'=>'CWebLogRoute',
+				//),
 				/*array(
 						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
 						'ipFilters'=>array('127.0.0.1','192.168.56.1'),

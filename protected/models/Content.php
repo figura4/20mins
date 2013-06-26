@@ -149,6 +149,13 @@ class Content extends CActiveRecord
 	}
 	*/
 	
+	public function scopes()
+	{
+		return array(
+			'sitemap'=>array('condition'=>'pub_date <= NOW()', 'order'=>'created_on DESC'),
+		);
+	}
+	
 	public function addComment($comment)
 	{
 		$comment->content_id=$this->id;
@@ -189,6 +196,11 @@ class Content extends CActiveRecord
     	return $result;
     }
     
+    public function getUrlifiedTitle()
+    {
+    	return $this->urlifyTitle();
+    }
+        
     public function getUrl() {
     	if ($this->type == 'content')
     		return Yii::app()->createUrl('content/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));

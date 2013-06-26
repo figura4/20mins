@@ -24,11 +24,11 @@ class FeedController extends Controller
 		foreach($contents as $content) {
 			$item = $feed->createNewItem();
 			$item->title = $content->page_title;
-			$item->link = Yii::app()->getBaseUrl(true).Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle()));
+			$item->link = Yii::app()->createAbsoluteUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle()));
 			$item->date = time();
 			$item->description = CHtml::image('/20mins/images/covers/'.$content->cover, $content->page_title) . $content->getTeaser(200);
 			$item->addTag('author', 'staff@20mins.it (Oscar Riva)');
-			$item->addTag('guid', Yii::app()->getBaseUrl(true).Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle())));
+			$item->addTag('guid', Yii::app()->createAbsoluteUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle())));
 			
 			$feed->addItem($item);
 		}
@@ -38,8 +38,74 @@ class FeedController extends Controller
 		));
 	}
 
-	public function actionSitemap()
+	public function getBaseSitePageList()
 	{
-		$this->render('sitemap');
+		return array(
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/'),
+							'frequency'=>'weekly',
+							'priority'=>'1',
+					),
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/recensioni/libri'),
+							'frequency'=>'weekly',
+							'priority'=>'0.8',
+					),
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/recensioni/tv'),
+							'frequency'=>'weekly',
+							'priority'=>'0.8',
+					),
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/recensioni/film'),
+							'frequency'=>'weekly',
+							'priority'=>'0.8',
+					),
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/site/page', array('view'=>'about')),
+							'frequency'=>'weekly',
+							'priority'=>'0.8',
+					),
+					array(
+							'loc'=>Yii::app()->createAbsoluteUrl('/site/page', array('view'=>'privacy')),
+							'frequency'=>'weekly',
+							'priority'=>'0.3',
+					),
+				);
+	}
+	
+	public function actions()
+	{
+		return array(
+			'sitemap'=>array(
+				'class'=>'ext.sitemap.ESitemapAction',
+					'importListMethod'=>'getBaseSitePageList',
+					'classConfig'=>array(
+						array('baseModel'=>'Review',
+								'route'=>'/review/view',
+								'params'=>array('id'=>'id', 'title'=>'urlifyTitle()')
+						),
+						array('baseModel'=>'Content',
+							'route'=>'/content/view',
+							'params'=>array('id'=>'id', 'title'=>'page_title')
+						),
+					),
+			),
+			'sitemapxml'=>array(
+				'class'=>'ext.sitemap.ESitemapXMLAction',
+				'classConfig'=>array(
+					array('baseModel'=>'Review',
+							'route'=>'/review/view',
+							'params'=>array('id'=>'id', 'title'=>'urlifiedTitle')
+					),
+					array('baseModel'=>'Content',
+						'route'=>'/content/view',
+						'params'=>array('id'=>'id', 'title'=>'page_title')
+					),
+				),
+				//'bypassLogs'=>true, // if using yii debug toolbar enable this line
+				'importListMethod'=>'getBaseSitePageList',
+			),
+		);
 	}
 }
