@@ -125,16 +125,17 @@ class ReviewController extends Controller
 	public function actionList($tagId=null, $type=null, $author=null, $vote=null, $order='vote DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
-		
+
 		// Setting page title
-		if (is_numeric($tagId))
-			$title='Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
-		elseif (in_array($type, array('book', 'tv', 'movie')))
+		if (is_numeric($tagId)) {
+			$tag=Tag::model()->findByPk($tagId);
+			$title=(is_null($tag)) ? 'Categoria non trovata' : 'Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
+		} elseif (in_array($type, array('book', 'tv', 'movie')))
 			$title='Recensioni di '.getReviewType($type, true);
 		elseif (is_numeric($author))
 			$title='Recensioni dell\'autore '.Author::model()->findByPk($author)->getFullName(false);
 		elseif (is_numeric($vote))
-			$title='Recensioni votate '.getHtmlVote($vote);
+			$title='Recensioni con voto '.getHtmlVote($vote);
 		else
 			$title='Elenco recensioni';
 		

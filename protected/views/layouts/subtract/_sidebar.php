@@ -15,18 +15,9 @@
 					</div>
 					
 					<div class="widget">
-						<h5>Twitter</h5>
-						<div class="twitter-container">
-							<i class="icon-twitter"></i>
-							<div class="tweet"></div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="twitter-follow">
-							<a href="https://twitter.com/figura_4"
-								class="twitter-follow-button" data-show-count="false"
-								data-lang="en">Follow @figura_4</a>
-						</div>
-					</div>	
+						<a class="twitter-timeline" href="https://twitter.com/figura_4" data-widget-id="349907951680618498">Tweets di @figura_4</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
 
 					<div class="widget">
 						<h5>Featured Post</h5>

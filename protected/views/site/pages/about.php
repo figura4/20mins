@@ -1,13 +1,8 @@
 <div class="eleven columns">
 	<?php
-	/* @var $this SiteController */
-	
 	$this->pageTitle=Yii::app()->name . ' - About';
-	$this->breadcrumbs=array(
-		'About',
-	);
 	?>
-	<h1>About</h1>
+	<h2>About</h2>
 	
 	<p>Sono appassionato di fantascienza fin da quando, a 9 anni, 
 	lessi per caso <em>Sentinella</em> di Fredric Brown. 
