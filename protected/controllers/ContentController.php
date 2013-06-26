@@ -28,7 +28,7 @@ class ContentController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'list'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -58,6 +58,47 @@ class ContentController extends Controller
 		$this->render('view',array(
 			'model'=>$model,
 			'comment'=>$comment,
+		));
+	}
+	
+	/**
+	 * Get a list of contents accordig to parameters.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param string $order the order to display the reviews
+	 * @param string $tagId the id of the given tag
+	 */
+	public function actionList($tagId=null, $order='vote DESC')
+	{
+		$this->layout='//layouts/subtract/column2';
+		
+		// Setting page title
+		if (is_numeric($tagId))
+			$title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
+		else
+			$title='Elenco Post';
+		
+		// Setting search condition
+		$condition = 'published=1 and pub_date<=NOW()';
+		if (is_numeric($tagId))
+			$condition.=' and tag_id='.$tagId;
+		
+		$criteria=new CDbCriteria();
+		$criteria->with=array('categories');
+		$criteria->condition=$condition;
+		$criteria->together=true;
+		$criteria->order = 'pub_date DESC';
+		$count=Content::model()->count($criteria);
+		$pages=new CPagination($count);
+		
+		// results per page
+		$pages->setPageSize(Yii::app()->params['pageSize']);
+		$pages->applyLimit($criteria);
+		$contents=Content::model()->findAll($criteria);
+		
+		$this->render('list',array(
+			'contents'=>$contents,
+			'pages'=>$pages,
+			'title'=>$title,
 		));
 	}
 

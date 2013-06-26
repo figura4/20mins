@@ -2,6 +2,7 @@
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
+require_once( dirname(__FILE__) . '/../components/helpers.php');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -18,6 +19,7 @@ return array(
 		'application.components.*',
 		'application.extensions.CAdvancedArBehavior',
 		'application.extensions.CustomPager',
+		'application.extensions.feed.*',
 	),
 
 	'modules'=>array(
@@ -50,8 +52,9 @@ return array(
 				'recensioni/film/<id:\d+>/<title:.*?>'=>'review/view',
 				'recensioni/categorie'=>'tag/list', // @TODO create a page with tag list?
 				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'review/list/tagId/<id>', 
+				'recensioni/voto/<vote:\d+>'=>'review/list/vote/<vote>',
 				'comment/create/<contentId:\d+>'=>'comment/create', 
-				'post'=>'content/list', // @TODO create posts list page (blog home page?)
+				'post'=>'content/list', 
 				'post/<id:\d+>/<title:.*?>'=>'content/view',
 				'search'=>'site/search', // @TODO implement website search
 				'admin'=>'site/admin', // @TODO create initial admin page

@@ -43,8 +43,7 @@ class SiteController extends Controller
 		$this->render('index', array(
 	        'pages'=>$pages,
 			'contents'=>$contents,
-	    ));
-				
+	    ));	
 	}
 
 	/**
