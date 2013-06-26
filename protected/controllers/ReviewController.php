@@ -28,7 +28,7 @@ class ReviewController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'list'),
+				'actions'=>array('index','view', 'list', 'listTag'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -120,11 +120,12 @@ class ReviewController extends Controller
 	 * @param string $vote the vote of the reviews to look for
 	 * @param string $order the order to display the reviews
 	 * @param int $author ID of the author associated to the reviews to display
+	 * @param string $tagId the id of the given tag
 	 */
-	public function actionList($type=null, $author=null, $vote=null, $order='vote DESC')
+	public function actionList($tagId=null, $type=null, $author=null, $vote=null, $order='vote DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
-		
+	
 		$condition = 'published=1 and pub_date<=NOW()';
 		if (in_array($type, array('book', 'tv', 'movie')))
 			$condition.=' and type=\'' . $type.'\'';
@@ -132,18 +133,18 @@ class ReviewController extends Controller
 			$condition.=' and author_id='.$author;
 		if (is_numeric($vote))
 			$condition.=' and vote='.$vote;
+		if (is_numeric($tagId))
+			$condition.=' and tag_id='.$tagId;
 		
-		$dataProvider=new CActiveDataProvider('Review', array(
-				'criteria'=>array(
-					'condition'=>$condition,
-					'with'=>array('author'),
-				),
-				'pagination'=>array(
-						'pageSize'=>50,
-				),
-				'sort'=>array(
-						'defaultOrder'=>$order,
-				)
+		$dataProvider = new CActiveDataProvider('Review', array(
+    		'criteria' => array(
+        		'with' => array('categories'),
+        		'condition' => $condition, 
+    			'together' => true, 
+    		),
+    		'pagination' => array(
+        		'pageSize' => 50,
+    		),
 		));
 		
 		$this->render('list',array(
