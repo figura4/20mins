@@ -125,7 +125,18 @@ class ReviewController extends Controller
 	public function actionList($tagId=null, $type=null, $author=null, $vote=null, $order='vote DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
-	
+		
+		if (is_numeric($tagId))
+			$title='Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
+		elseif (in_array($type, array('book', 'tv', 'movie')))
+			$title='Recensioni di '.$type;
+		elseif (is_numeric($author))
+			$title='Recensioni dell\'autore '.Author::model()->findByPk($author)->getFullName(false);
+		elseif (is_numeric($vote))
+			$title='Recensioni votate '.$vote;
+		else
+			$title='Elenco recensioni';
+		
 		$condition = 'published=1 and pub_date<=NOW()';
 		if (in_array($type, array('book', 'tv', 'movie')))
 			$condition.=' and type=\'' . $type.'\'';
@@ -148,7 +159,8 @@ class ReviewController extends Controller
 		));
 		
 		$this->render('list',array(
-				'dataProvider'=>$dataProvider,
+			'dataProvider'=>$dataProvider,
+			'title'=>$title,
 		));
 	}
 	

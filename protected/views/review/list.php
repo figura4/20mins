@@ -1,5 +1,5 @@
 <div class="eleven columns">
-	<h1>Manage Reviews</h1>
+	<h1><?php echo $title ?></h1>
 	
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 	    'dataProvider'=>$dataProvider,
