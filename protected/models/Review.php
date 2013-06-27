@@ -132,14 +132,14 @@ class Review extends Content
 		return (empty($this->italian_title)) ? $this->original_title : $this->italian_title;
 	}
 	
-	public function getHtmlVote()
+	public function getHtmlVote($color='8fba3b')
 	{
 		$htmlVote='';
 		for ($i=1; $i<=$this->vote/2; $i++) {
-			$htmlVote .= '<i class="icon-star" style="color:#8fba3b;"></i>';
+			$htmlVote .= '<i class="icon-star" style="color:#$color;"></i>';
 		}
 		if ($this->vote%2 <> 0)
-			$htmlVote .= '<i class="icon-star-half" style="color:#8fba3b;"></i>';
+			$htmlVote .= '<i class="icon-star-half" style="color:#$color;"></i>';
 		return $htmlVote;
 	}
 	

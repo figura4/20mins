@@ -38,12 +38,11 @@
 										?>
 									</span>
 								</li>
-								<li><i class="icon-comments"></i> Commenti: <span><a href="javascript:void(0)"><?php echo count($model->comments); ?></a></span></li>
+								<li><i class="icon-heart"></i> Voto: <span><a href="javascript:void(0)"><?php echo $model->getHtmlVote(); ?></a></span></li>
 							</ul>
 						</div>
 						<h3>La recensione</h3>
 						<?php echo $model->body; //@TODO tinymce inserts spans into paragraphs! ?>
-						<div><?php echo $model->getHtmlVote() ?></div>
 						<?php if(count($model->quote)>0) {?>
 							<h3>Quotes</h3>
 							<?php foreach($model->quote as $quote) { ?>
