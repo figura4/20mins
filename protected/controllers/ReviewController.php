@@ -76,7 +76,6 @@ class ReviewController extends Controller
 		{
 			$model->attributes=$_POST['Review'];
 			$model->uploadedCover = CUploadedFile::getInstance($model, 'uploadedCover');
-			$model->categories = (array_key_exists('categories', $_POST['Review'])) ? $_POST['Review']['categories'] : array();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -102,7 +101,6 @@ class ReviewController extends Controller
 		{
 			$model->attributes=$_POST['Review'];
 			$model->uploadedCover = CUploadedFile::getInstance($model, 'uploadedCover');
-			$model->categories = (array_key_exists('categories', $_POST['Review'])) ? $_POST['Review']['categories'] : array();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

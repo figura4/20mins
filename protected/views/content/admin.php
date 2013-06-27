@@ -50,13 +50,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'published',
 		'type',
 		'pub_date',
-		array(            
-			'header' => 'tags',
-			'type' => 'raw',
-			'value' => 'CHtml::link( "Tags", Yii::app()->createUrl("content/tag", array("id" => $data->id)))', 
-		),
 		array(
-			'class'=>'CButtonColumn',
+		'class'=>'CButtonColumn',
+		'htmlOptions' => array('width'=>'70px'),
+		'template'=>'{tag}{update}{delete}{view}',
+		'buttons'=>array(
+				'tag' => array
+				(
+						'label'=>'Choose tags for this review',
+						'imageUrl'=>Yii::app()->request->baseUrl.'/images/tag.png',
+						'url'=>'Yii::app()->createUrl("content/tag", array("id" => $data->id))',
+				),
 		),
+),
 	),
 )); ?>
