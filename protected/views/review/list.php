@@ -1,3 +1,4 @@
+<?php $this->setPageTitle($title.' - '.Yii::app()->name); ?>
 <div class="eleven columns">
 	<h1><?php echo $title ?></h1>
 	

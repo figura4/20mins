@@ -1,3 +1,9 @@
+			<?php
+			$pageTitle=Yii::app()->name;
+			if ($pages->getCurrentPage()>0)
+				$pageTitle.=' - pagina '.($pages->getCurrentPage()+1);
+			$this->setPageTitle($pageTitle); 
+			?>
 			<div class="eleven columns">
 				<?php foreach ($contents as $content) { ?>
 				<div class="blog-post">

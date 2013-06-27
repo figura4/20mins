@@ -1,3 +1,4 @@
+			<?php $this->setPageTitle($title.' - '.Yii::app()->name); ?>
 			<div class="eleven columns">
 				<?php foreach ($contents as $content) { ?>
 				<div class="blog-post">

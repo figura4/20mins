@@ -1,3 +1,4 @@
+			<?php $this->setPageTitle($model->page_title.' - '.Yii::app()->name); ?>
 			<div class="eleven columns">
 				<div class="blog-post">
 					<div class="date">

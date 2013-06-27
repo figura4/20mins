@@ -4,13 +4,14 @@
 	/* @var $model ContactForm */
 	/* @var $form CActiveForm */
 	
-	$this->pageTitle=Yii::app()->name . ' - Contact Us';
+	$this->pageTitle=Yii::app()->name . ' - Contactti';
 	$this->breadcrumbs=array(
 		'Contact',
 	);
 	?>
 	
-	<h1>Contact Us</h1>
+	<?php /** @TODO: test contact form */?>
+	<h1>Contactti</h1>
 	
 	<?php if(Yii::app()->user->hasFlash('contact')): ?>
 	
@@ -21,7 +22,7 @@
 	<?php else: ?>
 	
 	<p>
-	If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+	Usa questo form per contattarmi.
 	</p>
 	
 	<div class="form">

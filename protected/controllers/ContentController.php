@@ -75,7 +75,7 @@ class ContentController extends Controller
 		if (is_numeric($tagId))
 			$title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
 		else
-			$title='Elenco Post';
+			$title='Blog';
 		
 		// Setting search condition
 		$condition = 'type=\'content\' and published=1 and pub_date<=NOW()';
