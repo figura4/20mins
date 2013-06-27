@@ -8,7 +8,7 @@ require_once( dirname(__FILE__) . '/../components/helpers.php');
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'20 minutes into the future...',
+	'name'=>'20mins.it',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -114,6 +114,8 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'staff@20mins.it',
+		'author'=>'Oscar Riva',
+		'slogan'=>'20 minutes into the future...',
 		'siteDescription'=>'Viaggio nel mondo della letteratura e cinematografia fantastica. Fantascienza, fantasy, romanzi, film, serie tv. Recensioni e note biografiche sugli autori.',
 		'authorPicsPath'=>'/images/authors/',
 		'imagesPath' => '/images/images/',

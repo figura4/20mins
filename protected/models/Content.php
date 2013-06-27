@@ -141,7 +141,7 @@ class Content extends CActiveRecord
 		return $model;
 	}
 	
-	/* @TODO removed to allow reviews on home page
+	/* removed to allow reviews on home page
 	function defaultScope(){
 		return array(
 			'condition'=>"type='content'",
@@ -201,13 +201,23 @@ class Content extends CActiveRecord
     	return $this->urlifyTitle();
     }
         
-    public function getUrl() {
-    	if ($this->type == 'content')
-    		return Yii::app()->createUrl('content/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
-    	else
-    		return Yii::app()->createUrl('review/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    public function getUrl($absolute=false) {
+    	if ($absolute) {
+    		if ($this->type == 'content')
+    			return Yii::app()->createAbsoluteUrl('content/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    		else
+    			return Yii::app()->createAbsoluteUrl('review/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    	} else {
+	    	if ($this->type == 'content')
+	    		return Yii::app()->createUrl('content/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+	    	else
+	    		return Yii::app()->createUrl('review/view', array('id' => $this->id, 'title'=>$this->urlifyTitle()));
+    	}
     }
     
+    /**
+     *  @TODO: remove '/20mins on production'
+     */
     public function getCoverUrl()
     {
     	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default.jpg' : $this->cover);

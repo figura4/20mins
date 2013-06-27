@@ -4,7 +4,7 @@
 					<ul class="comments">
 						<?php foreach ($model->comments as $comment) { ?>
 							<li class="comment-cont">
-								<div class="avatar"><img src="/20mins/images/subtract/avatar.png" alt="" /></div>
+								<div class="avatar"><img src="<?php getAvatar(); ?>" alt="avatar" /></div>
 								<div class="comment">
 									<h6><?php echo $comment->author; ?></h6>
 									<p><?php echo $comment->body; ?></p>

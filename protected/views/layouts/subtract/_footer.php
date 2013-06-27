@@ -13,7 +13,7 @@
 						<i class="icon-home contact"></i>Salacus Fields, New Crobuzon
 					</p>
 					<p>
-						<i class="icon-envelope-alt contact"></i><a href="mailto:staff@20mins.it">staff@20mins.it</a>
+						<i class="icon-envelope-alt contact"></i><a href="mailto:<?php echo Yii::app()->params['adminEmail']; ?>"><?php echo Yii::app()->params['adminEmail']; ?></a>
 					</p>
 					<p>
 						<i class="icon-globe contact"></i><a href="http://bitgrabbers.com">http://bitgrabbers.com</a>
@@ -27,7 +27,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="eight columns">
-					<div class="copy">&copy; 2013 Oscar Riva</div>
+					<div class="copy">&copy; 2013 <?php echo Yii::app()->params['author']; ?></div>
 				</div>
 				<div class="eight columns">
 					<ul class="social">

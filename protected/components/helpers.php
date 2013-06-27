@@ -32,3 +32,10 @@ function getHtmlVote($vote)
 		$htmlVote .= '<i class="icon-star-half" style="color:#8fba3b;"></i>';
 	return $htmlVote;
 }
+
+function getAvatar($isAdmin=false) {
+	if ($isAdmin)
+		return yii::app()->getParams('avatarsPath').'figura4.png';
+	else
+		return yii::app()->getParams('avatarsPath').'avatar.png';
+}

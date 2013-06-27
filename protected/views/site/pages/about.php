@@ -21,7 +21,7 @@
 		<div class="members">
 			<div class="one-third column">
 				<div class="member-container">
-					<img src="/20mins/images/subtract/member.png" alt="" class="tool" title="Hi! What's up?" />
+					<img src="<?php echo Yii::app()->request->getBaseUrl(); ?>/images/subtract/member.png" alt="Autore del sito" class="tool" title="Hi! What's up?" />
 					<div class="member-title">
 						<h4>Oscar Riva</h4>
 						<p>Aka Figura4</p>

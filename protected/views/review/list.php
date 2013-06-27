@@ -3,7 +3,7 @@
 	
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 	    'dataProvider'=>$dataProvider,
-		'cssFile' => '/20mins/css/subtract/tables/tables.css',
+		'cssFile' => Yii::app()->request->getBaseUrl().'/css/subtract/tables/tables.css',
 		'enableSorting' => false,
 	    'columns'=>array(
     		//'type',

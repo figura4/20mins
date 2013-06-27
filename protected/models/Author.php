@@ -117,6 +117,14 @@ class Author extends CActiveRecord
 		return ucfirst($this->first_name) . " " . ucfirst($this->last_name); 
 	}
 	
+	/**
+	 *  @TODO: remove '/20mins on production'
+	 */
+	public function getPictureUrl()
+	{
+		return '/20mins' . Yii::app()->params['authorPicsPath'] . (is_null($this->picture) ? 'default.png' : $this->picture);
+	}
+	
 	public function beforeSave(){
 		if ($this->isNewRecord)
 			$this->created_on = new CDbExpression('NOW()');
