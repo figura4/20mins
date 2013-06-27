@@ -134,9 +134,10 @@ class ReviewController extends Controller
 			$this->title='Recensioni di '.getReviewType($type, true);
 		elseif (is_numeric($author))
 			$this->title='Recensioni dell\'autore '.Author::model()->findByPk($author)->getFullName(false);
-		elseif (is_numeric($vote))
+		elseif (is_numeric($vote)) {
+			$this->pageTitle='Recensioni con voto '.$vote;
 			$this->title='Recensioni con voto '.getHtmlVote($vote);
-		else
+		} else
 			$this->title='Elenco recensioni';
 		
 		// Setting search condition

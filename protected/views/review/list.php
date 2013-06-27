@@ -1,5 +1,5 @@
 			<?php
-			$this->setPageTitle($this->title.' - '.Yii::app()->name);
+			$this->setPageTitle($this->pageTitle.' - '.Yii::app()->name);
 			$this->subtitle= 'Elenco recensioni';
 			?>
 

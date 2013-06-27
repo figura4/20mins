@@ -165,7 +165,7 @@ class Review extends Content
 	
 	public function beforeSave(){
 		if(parent::beforeSave()) {
-			$this->page_title = $this->full_title;
+			$this->page_title = $this->full_title; // @TODO choose a default page title for reviews
 			return true;
 		}
 		return false;
