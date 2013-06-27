@@ -63,6 +63,7 @@
 													array('label'=>getHtmlVote(1), 'url'=>array('/recensioni/voto/1')),
 											),
 									),
+									array('label'=>'Blog', 'url'=>array('/blog')),
 									array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about'), 'itemOptions'=>array('class'=>'has-flyout')),
 									array('label'=>'Contact', 'url'=>array('/site/contact'), 'itemOptions'=>array('class'=>'has-flyout')),
     						),

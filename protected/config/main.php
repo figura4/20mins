@@ -55,8 +55,8 @@ return array(
 				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'review/list/tagId/<id>', 
 				'recensioni/voto/<vote:\d+>'=>'review/list/vote/<vote>',
 				'comment/create/<contentId:\d+>'=>'comment/create', 
-				'post'=>'content/list', 
-				'post/<id:\d+>/<title:.*?>'=>'content/view',
+				'blog'=>'content/list', 
+				'blog/<id:\d+>/<title:.*?>'=>'content/view',
 				'search'=>'site/search', // @TODO implement website search
 				'admin'=>'site/admin', // @TODO create initial admin page
 				'login'=>'site/login',
@@ -98,9 +98,9 @@ return array(
 					'levels'=>'error, warning, trace, info',
 				),
 				// uncomment the following to show log messages on web pages
-				//array(
-				//	'class'=>'CWebLogRoute',
-				//),
+				array(
+					'class'=>'CWebLogRoute',
+				),
 				/*array(
 						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
 						'ipFilters'=>array('127.0.0.1','192.168.56.1'),

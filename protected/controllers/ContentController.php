@@ -67,7 +67,7 @@ class ContentController extends Controller
 	 * @param string $order the order to display the reviews
 	 * @param string $tagId the id of the given tag
 	 */
-	public function actionList($tagId=null, $order='vote DESC')
+	public function actionList($tagId=null, $order='pub_date DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
 		
@@ -78,7 +78,7 @@ class ContentController extends Controller
 			$title='Elenco Post';
 		
 		// Setting search condition
-		$condition = 'published=1 and pub_date<=NOW()';
+		$condition = 'type=\'content\' and published=1 and pub_date<=NOW()';
 		if (is_numeric($tagId))
 			$condition.=' and tag_id='.$tagId;
 		
@@ -86,7 +86,7 @@ class ContentController extends Controller
 		$criteria->with=array('categories');
 		$criteria->condition=$condition;
 		$criteria->together=true;
-		$criteria->order = 'pub_date DESC';
+		$criteria->order = $order;
 		$count=Content::model()->count($criteria);
 		$pages=new CPagination($count);
 		
