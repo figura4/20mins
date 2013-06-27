@@ -8,7 +8,7 @@ class FeedController extends Controller
 
 		// general feed settings
 		$feed->title= Yii::app()->name.' - feed delle recensioni';
-		$feed->description = 'Feed delle recensioni di 20mins.it';
+		$feed->description = 'Feed delle recensioni di '.Yii::app()-name;
 		
 		//$feed->setImage('Testing RSS 2.0 EFeed class','http://20mins.it/rss',
 		//		'http://www.yiiframework.com/forum/uploads/profile/photo-7106.jpg');
