@@ -21,7 +21,7 @@
 			    				'name'=>'Titolo',
 			    				'header'=>'Titolo',
 			    				'type'=>'raw',
-			    				'value'=>'CHtml::link($data->getFull_title(), Yii::app()->createUrl("review/list"))',
+			    				'value'=>'CHtml::link($data->getFull_title(), $data->getUrl())',
 			    		),
 				    	array(            
 				    	    'name'=>'authorName',

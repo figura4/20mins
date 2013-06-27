@@ -24,7 +24,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'author_id'); ?>
-		<?php echo $form->dropDownList($model,'author_id', CHtml::listData(Author::model()->findAll(array('order'=>'last_name')), 'id', 'full_name'), array('empty'=>'- select author')); ?>
+		<?php echo $form->dropDownList($model,'author_id', CHtml::listData(Author::model()->findAll(array('order'=>'last_name')), 'id', 'fullName'), array('empty'=>'- select author')); ?>
 		<?php echo $form->error($model,'author_id'); ?>
 		<?php echo CHtml::link('New author', $this->createUrl('/author/create'), array('target'=>'_blank')); ?>
 	</div>

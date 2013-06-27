@@ -1,7 +1,14 @@
 			<?php
-			$this->setPageTitle(Yii::app()->name . ' - About'); 
-			$this->title=$model->page_title;
+			$this->setPageTitle($model->page_title.' - '.Yii::app()->name); 
+			$this->title=Ucfirst($model->page_title);
 			$this->subtitle= $model->author->getFullName(false);
+			if(!(is_null($model->editor) or ($model->editor=='')))
+				$this->subtitle.=" - $model->editor";
+			if(!(is_null($model->year) or ($model->year=='')))
+				$this->subtitle.=" ($model->year)";
+			if(!(is_null($model->pages) or ($model->pages=='')))
+				$this->subtitle.=", $model->pages pagine";
+			//$this->subtitle.=' '.$model->getHtmlVote();
 			?>
 			
 			<div class="eleven columns">
@@ -34,17 +41,14 @@
 								<li><i class="icon-comments"></i> Commenti: <span><a href="javascript:void(0)"><?php echo count($model->comments); ?></a></span></li>
 							</ul>
 						</div>
-						<h3><?php echo $model->page_title; ?></h3>
-						<?php echo $model->body;?>
+						<h3>La recensione</h3>
+						<?php echo $model->body; //@TODO tinymce inserts spans into paragraphs! ?>
+						<div><?php echo $model->getHtmlVote() ?></div>
 						<?php if(count($model->quote)>0) {?>
-							<h4>Quotes</h4>
+							<h3>Quotes</h3>
 							<?php foreach($model->quote as $quote) { ?>
 								<blockquote>
 									<?php echo $quote->body; ?>
-									<?php if (!is_null($quote->source)) { ?>
-										<br/>
-										<i class="icon-angle-right"></i> <?php echo $quote->source; ?>
-									<?php } ?>
 								</blockquote>
 							<?php } ?>
 						<?php } ?>

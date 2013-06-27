@@ -42,7 +42,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bio'); ?>
-		<?php echo $form->textArea($model,'bio',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'bio')); ?>
 		<?php echo $form->error($model,'bio'); ?>
 	</div>
 
