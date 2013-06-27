@@ -1,18 +1,23 @@
 			<aside class="sidebar">
 				<div class="offset-by-one four columns">
-				
+					
+					<?php 
+					$quote=Quote::model()->getRandomQuote();
+					if (!is_null($quote)) {					
+					?>
 					<div class="widget">
 						<h5>Random Quote</h5>
 						<blockquote>
-						Lorem ipsum dolor sit amet, 
-						consectetur adipiscing elit. 
-						Nunc at lacinia purus. 
-						Donec ac mauris et lacus 
-						pulvinar pulvinar eu in dui. 
-						Cras lacinia ultricies elit, 
-						commodo fermentum lacus euismod eget.
+						<?php 
+						echo $quote->body;
+						if (!is_null($quote->source)) {
+						?>
+							<br/>
+							<i class="icon-angle-right"></i> <?php echo $quote->source; ?>
+						<?php } ?>
 						</blockquote>
 					</div>
+					<?php } ?>
 					
 					<div class="widget">
 						<a class="twitter-timeline" href="https://twitter.com/figura_4" data-widget-id="349907951680618498">Tweets di @figura_4</a>

@@ -6,22 +6,6 @@
 					    cuoco per diletto, origamista per vocazione<br>
 					    appassionato del fantastico in tutte le sue forme</p>
 				</div>
-				
-				<!-- 
-				<div class="one-third column">
-					<h5>Twitter</h5>
-					<div class="twitter-container">
-						<i class="icon-twitter"></i>
-						<div class="tweet"></div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="twitter-follow">
-						<a href="https://twitter.com/figura_4"
-							class="twitter-follow-button" data-show-count="false"
-							data-lang="en">Follow @figura_4</a>
-					</div>
-				</div>
-				 -->
 
 				<div class="one-third column">
 					<h5>Contatti</h5>
