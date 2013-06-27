@@ -1,4 +1,8 @@
-			<?php $this->setPageTitle($title.' - '.Yii::app()->name); ?>
+			<?php
+			$this->setPageTitle($this->title.' - '.Yii::app()->name); 
+			$this->subtitle='Elenco di post';
+			?>
+			
 			<div class="eleven columns">
 				<?php foreach ($contents as $content) { ?>
 				<div class="blog-post">

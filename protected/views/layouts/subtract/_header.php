@@ -2,8 +2,8 @@
 			<div class="container">
 				<div class="sixteen columns">
 					<div class="logo">
-						<a href="/"><?php Yii::app()->name; ?></a>
-						<h1 id="title"><?php Yii::app()->params['slogan']; ?></h1>
+						<a href="/"><?php echo Yii::app()->name; ?></a>
+						<h1 id="title"><?php echo Yii::app()->params['slogan']; ?></h1>
 					</div>
 					<?php $this->widget('zii.widgets.CMenu',array(
 							'id'=>'nav-bar',
@@ -73,12 +73,3 @@
 				</div>
 			</div>
 		</header>
-		
-		<div class="page-header">
-			<div class="container">
-				<div class="sixteen columns">
-					<h1><?php Yii::app()->name; ?></h1>
-					<span class="sub-title"><?php Yii::app()->params['slogan']; ?></span>
-				</div>
-			</div>
-		</div>

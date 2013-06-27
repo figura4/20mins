@@ -3,7 +3,7 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title><?php /** @TODO: settare pageTitle in ogni azione!*/?>
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<meta name="description" content="<?php echo Yii::app()->params['siteDescription']; ?>">
 	<meta name="author" content="<?php echo Yii::app()->params['author']; ?>">
 
@@ -13,7 +13,6 @@
 
 	<!-- CSS
   ================================================== -->
-    <?php // @TODO Big problem with rel paths using apache subfolder!  ?>
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->getBaseUrl(); ?>/css/subtract/stylesheets/screen.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->getBaseUrl(); ?>/css/subtract/stylesheets/jquery.fancybox-1.3.4.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->getBaseUrl(); ?>/css/subtract/icon_fonts.css">
@@ -31,6 +30,7 @@
 
 	<!-- Favicons
 	================================================== -->
+	<?php /** @TODO set favicon */ ?>
 	<link rel="shortcut icon" href="img/favicon.png">
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">

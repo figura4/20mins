@@ -1,4 +1,3 @@
-	<?php // @TODO Big problem with rel paths using apache subfolder!  ?>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(); ?>/js/subtract/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(); ?>/js/subtract/jquery-ui-1.10.0.custom.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(); ?>/js/subtract/jquery.fancybox-1.3.4.pack.js"></script>

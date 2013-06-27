@@ -1,9 +1,14 @@
 			<?php
-			$pageTitle=Yii::app()->name;
+			$title=Yii::app()->name;
 			if ($pages->getCurrentPage()>0)
-				$pageTitle.=' - pagina '.($pages->getCurrentPage()+1);
+				$pageTitle=$title.' - pagina '.($pages->getCurrentPage()+1);
+			else
+				$pageTitle=$title;
 			$this->setPageTitle($pageTitle); 
+			$this->title=$title;
+			$this->subtitle='Recensioni, opinioni e pensieri sparsi';
 			?>
+		
 			<div class="eleven columns">
 				<?php foreach ($contents as $content) { ?>
 				<div class="blog-post">

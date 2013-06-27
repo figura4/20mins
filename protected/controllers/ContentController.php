@@ -73,9 +73,9 @@ class ContentController extends Controller
 		
 		// Setting page title
 		if (is_numeric($tagId))
-			$title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
+			$this->title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
 		else
-			$title='Blog';
+			$this->title='Blog';
 		
 		// Setting search condition
 		$condition = 'type=\'content\' and published=1 and pub_date<=NOW()';
@@ -98,7 +98,6 @@ class ContentController extends Controller
 		$this->render('list',array(
 			'contents'=>$contents,
 			'pages'=>$pages,
-			'title'=>$title,
 		));
 	}
 

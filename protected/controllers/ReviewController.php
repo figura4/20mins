@@ -129,15 +129,15 @@ class ReviewController extends Controller
 		// Setting page title
 		if (is_numeric($tagId)) {
 			$tag=Tag::model()->findByPk($tagId);
-			$title=(is_null($tag)) ? 'Categoria non trovata' : 'Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
+			$this->title=(is_null($tag)) ? 'Categoria non trovata' : 'Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
 		} elseif (in_array($type, array('book', 'tv', 'movie')))
-			$title='Recensioni di '.getReviewType($type, true);
+			$this->title='Recensioni di '.getReviewType($type, true);
 		elseif (is_numeric($author))
-			$title='Recensioni dell\'autore '.Author::model()->findByPk($author)->getFullName(false);
+			$this->title='Recensioni dell\'autore '.Author::model()->findByPk($author)->getFullName(false);
 		elseif (is_numeric($vote))
-			$title='Recensioni con voto '.getHtmlVote($vote);
+			$this->title='Recensioni con voto '.getHtmlVote($vote);
 		else
-			$title='Elenco recensioni';
+			$this->title='Elenco recensioni';
 		
 		// Setting search condition
 		$condition = 'published=1 and pub_date<=NOW()';
@@ -163,7 +163,6 @@ class ReviewController extends Controller
 		
 		$this->render('list',array(
 			'dataProvider'=>$dataProvider,
-			'title'=>$title,
 		));
 	}
 	

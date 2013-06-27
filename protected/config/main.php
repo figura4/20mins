@@ -61,7 +61,7 @@ return array(
 				'admin'=>'site/admin', // @TODO create initial admin page
 				'login'=>'site/login',
 				'rss'=>'feed/rss',
-				'sitemap'=>'feed/sitemapxml', // @TODO xml sitemap
+				'sitemap'=>'feed/sitemapxml',
 				'sitemap.xml'=>'feed/sitemapxml',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

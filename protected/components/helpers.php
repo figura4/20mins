@@ -34,8 +34,9 @@ function getHtmlVote($vote)
 }
 
 function getAvatar($isAdmin=false) {
+	// @TODO: remove /20mins/
 	if ($isAdmin)
-		return yii::app()->getParams('avatarsPath').'figura4.png';
+		return '/20mins'.yii::app()->params['avatarsPath'].'figura4.png';
 	else
-		return yii::app()->getParams('avatarsPath').'avatar.png';
+		return '/20mins'.yii::app()->params['avatarsPath'].'avatar.png';
 }
