@@ -2,8 +2,8 @@
 			<div class="container">
 				<div class="one-third column">
 					<h5>About Me</h5>
-					<p>Informatico per passione e per mestiere,<br>
-					    cuoco per diletto, origamista per vocazione<br>
+					<p>Informatico per vocazione e per mestiere,<br>
+					    cuoco per diletto, origamista per divertimento<br>
 					    appassionato del fantastico in tutte le sue forme</p>
 				</div>
 
