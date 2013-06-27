@@ -41,7 +41,7 @@
 								</ul>
 						</div>
 						<h3><?php echo CHtml::link($content->page_title, Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle()))); ?></h3>
-						<?php echo $content->getTeaser(200); ?>
+						<?php echo $content->getTeaser(600); ?>
 						<?php echo CHtml::link('Leggi tutto', Yii::app()->createUrl(($content->type == 'content') ? 'content/view' : 'review/view', array('id' => $content->id, 'title'=>$content->urlifyTitle())), array('class'=>'button')); ?>
 					</div>
 					<div class="clearfix"></div>

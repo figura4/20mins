@@ -223,7 +223,7 @@ class Content extends CActiveRecord
     	return '/20mins' . Yii::app()->params['coversPath'] . (is_null($this->cover) ? 'default.jpg' : $this->cover);
     }
     
-    public function getTeaser($chars, $trailing = '') 
+    public function getTeaser($chars, $trailing = '[...]') 
     {
     	$text = $this->body;
     	if (strlen($this->body) > $chars) {
