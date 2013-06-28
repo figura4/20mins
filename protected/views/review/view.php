@@ -41,7 +41,7 @@
 							</ul>
 						</div>
 						<h3>La recensione</h3>
-						<?php echo $model->body; //@TODO tinymce inserts spans into paragraphs! ?>
+						<?php echo $model->body; ?>
 						<?php if(count($model->quote)>0) {?>
 							<h3>Quotes</h3>
 							<?php foreach($model->quote as $quote) { ?>
