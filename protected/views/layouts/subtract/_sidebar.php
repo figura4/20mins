@@ -10,7 +10,7 @@
 						<blockquote>
 						<?php 
 						echo $quote->body;
-						if (!is_null($quote->source)) {
+						if (!isset($quote->source) || trim($quote->source)==='') {
 						?>
 							<br/>
 							<i class="icon-angle-right"></i> <?php echo $quote->source; ?>

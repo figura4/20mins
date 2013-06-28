@@ -23,7 +23,6 @@
 						</div>
 						<div class="meta">
 								<ul>
-									<li><i class="icon-pencil"></i> Autore: <span><a href="javascript:void(0)">Figura4</a></span></li>
 									<li><i class="icon-tasks"></i> Categoria: <span><a href="javascript:void(0)"><?php echo $content->getCategory(); ?></a></span></li>
 									<li><i class="icon-tag"></i> Tags: 
 										<span>
