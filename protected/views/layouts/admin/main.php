@@ -29,8 +29,6 @@
 	<?php $this->widget('application.extensions.mbmenu.MbMenu',array(
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
                 array('label'=>'Admin', 'url'=>'', 'visible'=>!Yii::app()->user->isGuest,
                 	'items'=>array(
                     	array('label'=>'Contents', 'url'=>array('/content/admin'), 'visible'=>!Yii::app()->user->isGuest),
@@ -58,7 +56,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Oscar Riva.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

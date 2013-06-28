@@ -59,6 +59,7 @@ return array(
 				'blog/<id:\d+>/<title:.*?>'=>'content/view',
 				'search'=>'site/search', // @TODO implement website search
 				'admin'=>'site/admin', // @TODO create initial admin page
+				'about'=>'site/page/view/about',
 				'login'=>'site/login',
 				'rss'=>'feed/rss',
 				'sitemap'=>'feed/sitemapxml',

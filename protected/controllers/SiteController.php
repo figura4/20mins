@@ -5,6 +5,43 @@ class SiteController extends Controller
 	public $layout='//layouts/subtract/column2';
 	
 	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+				'accessControl', // perform access control for CRUD operations
+				'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+	
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+				array('allow',  // allow all users to perform 'index' and 'view' actions
+						'actions'=>array('index','error','contact','login'),
+						'users'=>array('*'),
+				),
+				array('allow', // allow authenticated user to perform 'create' and 'update' actions
+						'actions'=>array(),
+						'users'=>array('@'),
+				),
+				array('allow', // allow admin user to perform 'admin' and 'delete' actions
+						'actions'=>array('admin'),
+						'users'=>array('@'),
+				),
+				array('deny',  // deny all users
+						'users'=>array('*'),
+				),
+		);
+	}
+	
+	/**
 	 * Declares class-based actions.
 	 */
 	public function actions()
@@ -106,7 +143,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(Yii::app()->createUrl('admin'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -119,5 +156,11 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+	
+	public function actionAdmin()
+	{
+		$this->layout='//layouts/admin/column2';
+		$this->render('admin');
 	}
 }

@@ -27,7 +27,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="eight columns">
-					<div class="copy">&copy; 2013 <?php echo Yii::app()->params['author']; ?></div>
+					<div class="copy">&copy; <?php echo date('Y'); ?> <?php echo Yii::app()->params['author']; ?></div>
 				</div>
 				<div class="eight columns">
 					<ul class="social">
