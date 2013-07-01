@@ -8,7 +8,7 @@
 					<?php $this->widget('zii.widgets.CMenu',array(
 							'id'=>'nav-bar',
 							'items'=>array(
-									array('label'=>'Home', 'url'=>array('/'), 'itemOptions'=>array('class'=>'has-flyout')),
+									array('label'=>'Home', 'url'=>'/', 'itemOptions'=>array('class'=>'has-flyout')),
 									array('label'=>'Fantascienza', 'url'=>array('/recensioni/categorie/4/fantascienza'), 
 										'itemOptions'=>array('class'=>'has-flyout'), 
 										'submenuOptions'=>array('class'=>'flyout'),
@@ -38,7 +38,7 @@
 												array('label'=>'Urban Fantasy', 'url'=>array('/recensioni/categorie/12/urban-fantasy')),
 										),
 									),
-									array('label'=>'Recensioni per Tipo', 'url'=>array('javascript:void(0)'),
+									array('label'=>'Recensioni per Tipo', 'url'=>'javascript:void(0)',
 											'itemOptions'=>array('class'=>'has-flyout'),
 											'submenuOptions'=>array('class'=>'flyout'),
 											'items'=>array(
@@ -47,7 +47,7 @@
 													array('label'=>'Serie Tv', 'url'=>array('/recensioni/tv')),
 											),
 									),
-									array('label'=>'Recensioni per Voto', 'url'=>array('/site/index6'),
+									array('label'=>'Recensioni per Voto', 'url'=>'javascript:void(0)',
 											'itemOptions'=>array('class'=>'has-flyout'),
 											'submenuOptions'=>array('class'=>'flyout'),
 											'items'=>array(
