@@ -129,7 +129,7 @@ class Review extends Content
 	
 	public function getFull_title() 
 	{
-		return (empty($this->italian_title)) ? $this->original_title : $this->italian_title;
+		return (empty($this->italian_title) || $this->italian_title == '') ? $this->original_title : $this->italian_title;
 	}
 	
 	public function getHtmlVote($color='8fba3b')

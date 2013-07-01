@@ -12,8 +12,9 @@
 						echo $quote->body;
 						if (!isset($quote->source) || trim($quote->source)==='') {
 						?>
-							<br/>
-							<i class="icon-angle-right"></i> <?php echo $quote->source; ?>
+							<br/><br/>
+							<i class="icon-double-angle-right"></i> 
+							<?php echo CHtml::link($quote->review->full_title, $quote->review->getUrl())?>
 						<?php } ?>
 						</blockquote>
 					</div>
