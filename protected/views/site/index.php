@@ -29,7 +29,7 @@
 											<?php 
 												$tagsarray = array();
 												foreach ($content->categories as $tag) {
-													$tagsarray[] = CHtml::link(ucfirst($tag->name), Yii::app()->createUrl('review/list', array('id' => $tag->id, 'tag'=>$tag->name))); 
+													$tagsarray[] = CHtml::link(ucfirst($tag->name), Yii::app()->createUrl('review/list', array('tagId' => $tag->id, 'tag'=>$tag->urlifyTagName()))); 
 												}
 												$tagsHtml = implode(', ', $tagsarray);
 												echo $tagsHtml;

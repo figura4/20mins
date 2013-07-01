@@ -107,4 +107,13 @@ class Tag extends CActiveRecord
 	
 		return parent::beforeSave();
 	}
+	
+	public function urlifyTagName()
+	{
+		$result = $this->name;
+		$result = strtolower($result);
+		$result = preg_replace('/[^\w\d_ ]/si', '', $result);
+		$result = preg_replace('/\s+/', '-', $result);
+		return $result;
+	}
 }
