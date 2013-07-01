@@ -51,9 +51,9 @@ return array(
 				'recensioni/tv/<id:\d+>/<title:.*?>'=>'review/view',
 				'recensioni/film'=>'review/list/type/movie', 
 				'recensioni/film/<id:\d+>/<title:.*?>'=>'review/view',
-				'recensioni/categorie'=>'tag/list', // @TODO create a page with tag list?
-				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'review/list', 
-				'recensioni/voto/<vote:\d+>'=>'review/list/vote/<vote>',
+				//'recensioni/categorie'=>'tag/list', // @TODO create a page with tag list?
+				'recensioni/categorie/<tagId:\d+>/<tag:.*?>'=>'review/list', 
+				'recensioni/voto/<vote:\d+>'=>'review/list/',
 				'comment/create/<contentId:\d+>'=>'comment/create', 
 				'blog'=>'content/list', 
 				'blog/<id:\d+>/<title:.*?>'=>'content/view',
@@ -61,6 +61,7 @@ return array(
 				'admin'=>'site/admin',
 				'about'=>'site/page/view/about',
 				'login'=>'site/login',
+				''=>'site/index',
 				'rss'=>'feed/rss',
 				'sitemap'=>'feed/sitemapxml',
 				'sitemap.xml'=>'feed/sitemapxml',
