@@ -52,7 +52,7 @@ return array(
 				'recensioni/film'=>'review/list/type/movie', 
 				'recensioni/film/<id:\d+>/<title:.*?>'=>'review/view',
 				'recensioni/categorie'=>'tag/list', // @TODO create a page with tag list?
-				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'review/list/tagId/<id>', 
+				'recensioni/categorie/<id:\d+>/<tag:.*?>'=>'review/list', 
 				'recensioni/voto/<vote:\d+>'=>'review/list/vote/<vote>',
 				'comment/create/<contentId:\d+>'=>'comment/create', 
 				'blog'=>'content/list', 

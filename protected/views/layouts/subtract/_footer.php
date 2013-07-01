@@ -1,10 +1,14 @@
 		<footer>
 			<div class="container">
 				<div class="one-third column">
-					<h5>About Me</h5>
-					<p>Informatico per vocazione e per mestiere,<br>
-					    cuoco per diletto, origamista per divertimento<br>
-					    appassionato del fantastico in tutte le sue forme</p>
+					<h5>Credits</h5>
+					<p>Idea, programmazione PHP, <br>
+					progettazione database,<br>
+					recensioni:	Oscar Riva
+					</p>
+					<p>Powered by 
+					the <a href="http://www.yiiframework.com/">yii framework</a> and 
+					MySql</p>
 				</div>
 
 				<div class="one-third column">
@@ -20,6 +24,15 @@
 					</p>
 					<p>
 						<i class="icon-globe contact"></i><a href="http://oscarriva.it">http://oscarriva.it</a>
+					</p>
+				</div>
+				
+				<div class="one-third column">
+					<h5>Disclaimer</h5>
+					<p>
+					Questo sito non ha scopo di lucro.<br> 
+					Ogni immagine, logo o citazione <br>
+					&egrave; da considerarsi &copy; dei legittimi proprietari
 					</p>
 				</div>
 			</div>
