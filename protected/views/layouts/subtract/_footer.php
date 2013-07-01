@@ -32,7 +32,9 @@
 					<p>
 					Questo sito non ha scopo di lucro.<br> 
 					Ogni immagine, logo o citazione <br>
-					&egrave; da considerarsi &copy; dei legittimi proprietari
+					&egrave; da considerarsi &copy; dei legittimi proprietari.<br>
+					Contenuti pubblicati sotto licenza
+					<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>
 					</p>
 				</div>
 			</div>
