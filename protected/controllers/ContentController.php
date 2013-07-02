@@ -49,12 +49,16 @@ class ContentController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $title)
 	{
 		$this->layout='//layouts/subtract/column2';
 		$model=$this->loadModel($id);
     	$comment=$this->newComment($model);
-
+	
+    	if ($title != $model->urlifyTitle())
+    		throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
+    		//$this->redirect(Yii::app()->createUrl('content/view', array('id'=>$id, 'title'=>$model->urlifyTitle())));
+    	
 		$this->render('view',array(
 			'model'=>$model,
 			'comment'=>$comment,
@@ -67,14 +71,17 @@ class ContentController extends Controller
 	 * @param string $order the order to display the reviews
 	 * @param string $tagId the id of the given tag
 	 */
-	public function actionList($tagId=null, $order='pub_date DESC')
+	public function actionList($tagId=null, $tag=null, $order='pub_date DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
 		
 		// Setting page title
-		if (is_numeric($tagId))
+		if (is_numeric($tagId)) {
+			$tagModel=Tag::model()->findByPk($tagId);
+			if ($tag != $tagModel->urlifyTagName())
+				throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
 			$this->title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
-		else
+		} else
 			$this->title='Blog';
 		
 		// Setting search condition

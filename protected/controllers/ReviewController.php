@@ -49,12 +49,16 @@ class ReviewController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $title)
 	{
 		$this->layout='//layouts/subtract/column2';
 		$model=$this->loadModel($id);
     	$comment=$this->newComment($model);
-
+		
+    	if ($title != $model->urlifyTitle())
+    		//$this->redirect(Yii::app()->createUrl('review/view', array('id'=>$id, 'title'=>$model->urlifyTitle())));
+    		throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
+    	
 		$this->render('view',array(
 			'model'=>$model,
 			'comment'=>$comment,
@@ -120,14 +124,16 @@ class ReviewController extends Controller
 	 * @param int $author ID of the author associated to the reviews to display
 	 * @param string $tagId the id of the given tag
 	 */
-	public function actionList($tagId=null, $type=null, $author=null, $vote=null, $order='vote DESC')
+	public function actionList($tagId=null, $tag=null, $type=null, $author=null, $vote=null, $order='vote DESC')
 	{
 		$this->layout='//layouts/subtract/column2';
-
+		
 		// Setting page title
 		if (is_numeric($tagId)) {
-			$tag=Tag::model()->findByPk($tagId);
-			$this->title=(is_null($tag)) ? 'Categoria non trovata' : 'Recensioni della categoria '.Tag::model()->findByPk($tagId)->name;
+			$tagModel=Tag::model()->findByPk($tagId);
+			if ($tag != $tagModel->urlifyTagName())
+				throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
+			$this->title=(is_null($tagModel)) ? 'Categoria non trovata' : 'Recensioni della categoria '.$tagModel->name;
 		} elseif (in_array($type, array('book', 'tv', 'movie')))
 			$this->title='Recensioni di '.getReviewType($type, true);
 		elseif (is_numeric($author))
