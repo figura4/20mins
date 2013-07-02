@@ -78,7 +78,7 @@ class ContentController extends Controller
 		// Setting page title
 		if (is_numeric($tagId)) {
 			$tagModel=Tag::model()->findByPk($tagId);
-			if ($tag != $tagModel->urlifyTagName())
+			if (is_null($tagModel) || $tag != $tagModel->urlifyTagName())
 				throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
 			$this->title='Post nella categoria '.Tag::model()->findByPk($tagId)->name;
 		} else

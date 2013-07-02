@@ -131,7 +131,7 @@ class ReviewController extends Controller
 		// Setting page title
 		if (is_numeric($tagId)) {
 			$tagModel=Tag::model()->findByPk($tagId);
-			if ($tag != $tagModel->urlifyTagName())
+			if (is_null($tagModel) || $tag != $tagModel->urlifyTagName())
 				throw new CHttpException(404,'Pagina non trovata. L\'indirizzo non è corretto');
 			$this->title=(is_null($tagModel)) ? 'Categoria non trovata' : 'Recensioni della categoria '.$tagModel->name;
 		} elseif (in_array($type, array('book', 'tv', 'movie')))
